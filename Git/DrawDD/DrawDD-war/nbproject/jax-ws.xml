@@ -7,6 +7,9 @@
     <service name="EntregaWS">
       <implementation-class>ws.EntregaWS</implementation-class>
     </service>
+    <service name="HasEntregaWS">
+      <implementation-class>ws.HasEntregaWS</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

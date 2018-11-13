@@ -6,16 +6,23 @@
 package iweb.entity;
 
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -28,35 +35,36 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Entrega.findAll", query = "SELECT e FROM Entrega e")
     , @NamedQuery(name = "Entrega.findById", query = "SELECT e FROM Entrega e WHERE e.id = :id")
     , @NamedQuery(name = "Entrega.findByAnotacion", query = "SELECT e FROM Entrega e WHERE e.anotacion = :anotacion")
-    , @NamedQuery(name = "Entrega.findByFechadeentrega", query = "SELECT e FROM Entrega e WHERE e.fechadeentrega = :fechadeentrega")})
+    , @NamedQuery(name = "Entrega.findByFechaEntrega", query = "SELECT e FROM Entrega e WHERE e.fechaEntrega = :fechaEntrega")})
 public class Entrega implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 45)
     @Column(name = "id")
-    private String id;
-    @Size(max = 150)
+    private Integer id;
+    @Size(max = 255)
     @Column(name = "anotacion")
     private String anotacion;
-    @Size(max = 45)
-    @Column(name = "Fecha de entrega")
-    private String fechadeentrega;
+    @Column(name = "fecha_entrega")
+    @Temporal(TemporalType.DATE)
+    private Date fechaEntrega;
+    @OneToMany(mappedBy = "idEntrega")
+    private Collection<HasEntrega> hasEntregaCollection;
 
     public Entrega() {
     }
 
-    public Entrega(String id) {
+    public Entrega(Integer id) {
         this.id = id;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -68,12 +76,21 @@ public class Entrega implements Serializable {
         this.anotacion = anotacion;
     }
 
-    public String getFechadeentrega() {
-        return fechadeentrega;
+    public Date getFechaEntrega() {
+        return fechaEntrega;
     }
 
-    public void setFechadeentrega(String fechadeentrega) {
-        this.fechadeentrega = fechadeentrega;
+    public void setFechaEntrega(Date fechaEntrega) {
+        this.fechaEntrega = fechaEntrega;
+    }
+
+    @XmlTransient
+    public Collection<HasEntrega> getHasEntregaCollection() {
+        return hasEntregaCollection;
+    }
+
+    public void setHasEntregaCollection(Collection<HasEntrega> hasEntregaCollection) {
+        this.hasEntregaCollection = hasEntregaCollection;
     }
 
     @Override
@@ -98,7 +115,7 @@ public class Entrega implements Serializable {
 
     @Override
     public String toString() {
-        return "entity.Entrega[ id=" + id + " ]";
+        return "iweb.entity.Entrega[ id=" + id + " ]";
     }
     
 }
