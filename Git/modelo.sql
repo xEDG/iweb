@@ -73,6 +73,31 @@ CREATE TABLE IF NOT EXISTS `iweb`.`Serie_has_Entrega` (
 ENGINE = InnoDB;
 
 
+-- BUILD TABLES:
+LOCK TABLES `serie` WRITE;
+/*!40000 ALTER TABLE `serie` DISABLE KEYS */;
+INSERT INTO `serie` VALUES (1,'Accion','No me gusta',3),(2,'Drama','Muy guay',10),(3,'TERROR','Meh',5);
+/*!40000 ALTER TABLE `serie` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+-- BUILD TABLES:
+LOCK TABLES `entrega` WRITE;
+/*!40000 ALTER TABLE `entrega` DISABLE KEYS */;
+INSERT INTO `entrega` VALUES ('BD1','Dibujos llorando','01-01-2001'),('Bob1','Patricio Estrella','05-02-1987'),('Spi1','Traje rojo','01-01-2000'),('Spi2','Traje azul','01-01-2001');
+/*!40000 ALTER TABLE `entrega` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+-- GRANTS SUPERUSER to 'iweb'
+use mysql;
+CREATE USER 'iweb'@'localhost' IDENTIFIED BY 'iweb';
+GRANT ALL ON *.* TO 'iweb'@'localhost';
+flush privileges;
+
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
