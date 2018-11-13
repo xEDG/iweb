@@ -1,0 +1,9 @@
+
+Errores del tipo:
+RAR5099 : Wrong class name or classpath for Datasource Object  java.lang.ClassNotFoundException: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+
+Mover mysql-connector-java-5.1.23-bin.jar
+From 
+C:\Program Files\NetBeans 8.2\ide\modules\ext
+to
+C:\Program Files\glassfish4\glassfish\lib
