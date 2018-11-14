@@ -6,9 +6,11 @@
 package iweb.facade;
 
 import iweb.entity.Serie;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +29,14 @@ public class SerieFacade extends AbstractFacade<Serie> {
 
     public SerieFacade() {
         super(Serie.class);
+    }
+    
+    public List<Serie> findConTitulo(String titulo){
+        Query q;
+        q = this.em.createQuery("SELECT s FROM Serie s WHERE s.titulo LIKE CONCAT('%',:clave, '%')");
+        q.setParameter("clave", titulo);
+        List<Serie> result = (List) q.getResultList();
+        return result;
     }
     
 }
