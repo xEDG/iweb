@@ -5,9 +5,15 @@
  */
 package ws;
 
+import iweb.entity.Entrega;
 import iweb.entity.HasEntrega;
+import iweb.entity.Serie;
 import iweb.facade.HasEntregaFacade;
+import iweb.facade.SerieFacade;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.ejb.EJB;
 import javax.jws.WebService;
 import javax.ejb.Stateless;
@@ -26,6 +32,9 @@ public class HasEntregaWS {
     @EJB
     private HasEntregaFacade ejbRef;// Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Web Service Operation")
+    
+    @EJB
+    private SerieFacade ejbSerie;
 
     @WebMethod(operationName = "create")
     @Oneway
@@ -63,6 +72,19 @@ public class HasEntregaWS {
     @WebMethod(operationName = "count")
     public int count() {
         return ejbRef.count();
+    }
+    
+    @WebMethod(operationName = "findEntregasRelacionadaSerie")
+    public List<Entrega> findEntregasRelacionadaSerie(@WebParam(name = "serie") String serie) {
+        //TODO write your implementation code here:;
+        List<Serie> series = ejbSerie.findConTitulo(serie);
+        List<Integer> idSeries = new ArrayList<>();
+        for(Serie s : series){
+            idSeries.add(s.getId());
+        }
+        List<Entrega> entregas = ejbRef.findIdEntregaConTituloSerie(idSeries);
+        
+        return entregas;
     }
     
 }

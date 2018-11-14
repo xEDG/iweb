@@ -5,10 +5,15 @@
  */
 package iweb.facade;
 
+import iweb.entity.Entrega;
 import iweb.entity.HasEntrega;
+import iweb.entity.Serie;
+import java.util.List;
+import java.util.Set;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +32,15 @@ public class HasEntregaFacade extends AbstractFacade<HasEntrega> {
 
     public HasEntregaFacade() {
         super(HasEntrega.class);
+    }
+    
+    
+    public List<Entrega> findIdEntregaConTituloSerie(List<Integer> ids){
+        Query q;
+        q = this.em.createQuery("SELECT h.idEntrega FROM HasEntrega h  WHERE h.idSerie IN :clave");
+        q.setParameter("clave", ids);
+        List<Entrega> entregas = (List) q.getResultList();
+        return entregas;
     }
     
 }

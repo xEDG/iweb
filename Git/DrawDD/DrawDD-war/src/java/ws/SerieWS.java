@@ -54,6 +54,7 @@ public class SerieWS {
     public List<Serie> findAll() {
         return ejbRef.findAll();
     }
+    
 
     @WebMethod(operationName = "findRange")
     public List<Serie> findRange(@WebParam(name = "range") int[] range) {
@@ -63,6 +64,26 @@ public class SerieWS {
     @WebMethod(operationName = "count")
     public int count() {
         return ejbRef.count();
+    }
+    
+    
+     @WebMethod(operationName = "getBestValSerie")
+     public Serie getBestValSerie () {
+         return ejbRef.getBestValSerie();
+     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "findConTitulo")
+    public List<Serie> findConTitulo(@WebParam(name = "titulo") String titulo) {
+        //TODO write your implementation code here:;
+        return ejbRef.findConTitulo(titulo);
+    }
+    
+    @WebMethod (operationName = "getCategorias")
+    public List<String> getCategorias() {
+        return ejbRef.getCategorias();
     }
     
 }

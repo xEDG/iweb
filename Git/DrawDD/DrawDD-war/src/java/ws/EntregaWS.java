@@ -65,4 +65,25 @@ public class EntregaWS {
         return ejbRef.count();
     }
     
+    @WebMethod(operationName = "getHulks")
+    public List<String> getHulks() {
+        return ejbRef.getHulks();
+    }
+    
+    @WebMethod(operationName = "getFechaEntregaNotNull")
+    public List <Entrega> getFechaEntregaNotNull () {
+        return ejbRef.getFechaEntregaNotNull();
+    }
+    
+
+    @WebMethod(operationName = "filtrarPorAnotacion")
+    public List<Entrega> filtrarPorAntacion(String anotacion) {
+        return ejbRef.filtroPorAnotacion(anotacion);
+    }
+    
+    //Not working
+    @WebMethod(operationName = "filtrarPorPeriodoTiempo")
+    public List<Entrega> filtrarPorPeriodoTiempo(String d1, String d2) throws ParseException{
+        return ejbRef.filtrarPorPeriodoTiempo(d1, d2);
+    }
 }
