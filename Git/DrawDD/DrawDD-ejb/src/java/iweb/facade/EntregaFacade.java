@@ -6,12 +6,16 @@
 package iweb.facade;
 
 import iweb.entity.Entrega;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import javax.persistence.Query;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -45,6 +49,32 @@ public class EntregaFacade extends AbstractFacade<Entrega> {
       Query q;
       q = this.em.createQuery("Select e FROM Entrega e WHERE e.fechaEntrega IS NOT NULL");
       return (List) q.getResultList();
+    }
+    
+    public List<Entrega> filtroPorAnotacion(String anotacion){
+        
+        Query q = this.em.createQuery("SELECT e FROM Entrega e WHERE e.anotacion LIKE :anotacion"); 
+        q.setParameter("anotacion","%"+anotacion + "%");  
+        
+        List<Entrega> lista = (List<Entrega>) q.getResultList();
+        return lista;
+    }
+    
+    
+    //Not working
+    public List<Entrega> filtrarPorPeriodoTiempo(String d1, String d2) throws ParseException{
+        
+        DateFormat format = new SimpleDateFormat("YYYY-MM-DD");
+        Date date1 = format.parse(d1);
+        Date date2 = format.parse(d2);
+        
+        Query q = this.em.createQuery("select e from Entrega e where e.fechaEntrega BETWEEN  :d1 and :d2"); 
+        q.setParameter("d1", date1);
+        q.setParameter("d2", date2);
+      
+   
+        List<Entrega> lista = (List) q.getResultList();
+        return lista; 
     }
     
     /*  public Usuario obtenerUsuario(String usuario, String pass) {
