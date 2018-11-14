@@ -65,4 +65,13 @@ public class EntregaWS {
         return ejbRef.count();
     }
     
+    @WebMethod(operationName = "getHulks")
+    public List<String> getHulks() {
+        return ejbRef.getHulks();
+    }
+    
+    @WebMethod(operationName = "getFechaEntregaNotNull")
+    public List <Entrega> getFechaEntregaNotNull () {
+        return ejbRef.getFechaEntregaNotNull();
+    }
 }

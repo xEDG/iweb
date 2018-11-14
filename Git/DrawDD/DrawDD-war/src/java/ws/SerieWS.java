@@ -65,6 +65,12 @@ public class SerieWS {
     public int count() {
         return ejbRef.count();
     }
+    
+    
+     @WebMethod(operationName = "getBestValSerie")
+     public Serie getBestValSerie () {
+         return ejbRef.getBestValSerie();
+     }
 
     /**
      * Web service operation
@@ -73,6 +79,11 @@ public class SerieWS {
     public List<Serie> findConTitulo(@WebParam(name = "titulo") String titulo) {
         //TODO write your implementation code here:;
         return ejbRef.findConTitulo(titulo);
+    }
+    
+    @WebMethod (operationName = "getCategorias")
+    public List<String> getCategorias() {
+        return ejbRef.getCategorias();
     }
     
 }
