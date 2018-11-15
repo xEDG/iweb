@@ -59,4 +59,10 @@ public class SerieFacade extends AbstractFacade<Serie> {
         return result;
     }
     
+    public List<Serie> getAll(){
+        Query q;
+        q = this.em.createNamedQuery("SELECT s FROM Serie s");
+        return (List) q.getResultList();
+    }
+    
 }

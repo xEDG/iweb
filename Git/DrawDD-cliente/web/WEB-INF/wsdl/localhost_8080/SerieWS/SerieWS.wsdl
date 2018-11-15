@@ -22,6 +22,21 @@
 <message name="create">
 <part name="parameters" element="tns:create"/>
 </message>
+<message name="getAll">
+<part name="parameters" element="tns:getAll"/>
+</message>
+<message name="getAllResponse">
+<part name="parameters" element="tns:getAllResponse"/>
+</message>
+<message name="findRange">
+<part name="parameters" element="tns:findRange"/>
+</message>
+<message name="findRangeResponse">
+<part name="parameters" element="tns:findRangeResponse"/>
+</message>
+<message name="edit">
+<part name="parameters" element="tns:edit"/>
+</message>
 <message name="findAll">
 <part name="parameters" element="tns:findAll"/>
 </message>
@@ -34,26 +49,17 @@
 <message name="getBestValSerieResponse">
 <part name="parameters" element="tns:getBestValSerieResponse"/>
 </message>
-<message name="findRange">
-<part name="parameters" element="tns:findRange"/>
+<message name="findConTitulo">
+<part name="parameters" element="tns:findConTitulo"/>
 </message>
-<message name="findRangeResponse">
-<part name="parameters" element="tns:findRangeResponse"/>
-</message>
-<message name="edit">
-<part name="parameters" element="tns:edit"/>
+<message name="findConTituloResponse">
+<part name="parameters" element="tns:findConTituloResponse"/>
 </message>
 <message name="getCategorias">
 <part name="parameters" element="tns:getCategorias"/>
 </message>
 <message name="getCategoriasResponse">
 <part name="parameters" element="tns:getCategoriasResponse"/>
-</message>
-<message name="findConTitulo">
-<part name="parameters" element="tns:findConTitulo"/>
-</message>
-<message name="findConTituloResponse">
-<part name="parameters" element="tns:findConTituloResponse"/>
 </message>
 <portType name="SerieWS">
 <operation name="remove">
@@ -70,13 +76,9 @@
 <operation name="create">
 <input wsam:Action="http://ws/SerieWS/create" message="tns:create"/>
 </operation>
-<operation name="findAll">
-<input wsam:Action="http://ws/SerieWS/findAllRequest" message="tns:findAll"/>
-<output wsam:Action="http://ws/SerieWS/findAllResponse" message="tns:findAllResponse"/>
-</operation>
-<operation name="getBestValSerie">
-<input wsam:Action="http://ws/SerieWS/getBestValSerieRequest" message="tns:getBestValSerie"/>
-<output wsam:Action="http://ws/SerieWS/getBestValSerieResponse" message="tns:getBestValSerieResponse"/>
+<operation name="getAll">
+<input wsam:Action="http://ws/SerieWS/getAllRequest" message="tns:getAll"/>
+<output wsam:Action="http://ws/SerieWS/getAllResponse" message="tns:getAllResponse"/>
 </operation>
 <operation name="findRange">
 <input wsam:Action="http://ws/SerieWS/findRangeRequest" message="tns:findRange"/>
@@ -85,13 +87,21 @@
 <operation name="edit">
 <input wsam:Action="http://ws/SerieWS/edit" message="tns:edit"/>
 </operation>
-<operation name="getCategorias">
-<input wsam:Action="http://ws/SerieWS/getCategoriasRequest" message="tns:getCategorias"/>
-<output wsam:Action="http://ws/SerieWS/getCategoriasResponse" message="tns:getCategoriasResponse"/>
+<operation name="findAll">
+<input wsam:Action="http://ws/SerieWS/findAllRequest" message="tns:findAll"/>
+<output wsam:Action="http://ws/SerieWS/findAllResponse" message="tns:findAllResponse"/>
+</operation>
+<operation name="getBestValSerie">
+<input wsam:Action="http://ws/SerieWS/getBestValSerieRequest" message="tns:getBestValSerie"/>
+<output wsam:Action="http://ws/SerieWS/getBestValSerieResponse" message="tns:getBestValSerieResponse"/>
 </operation>
 <operation name="findConTitulo">
 <input wsam:Action="http://ws/SerieWS/findConTituloRequest" message="tns:findConTitulo"/>
 <output wsam:Action="http://ws/SerieWS/findConTituloResponse" message="tns:findConTituloResponse"/>
+</operation>
+<operation name="getCategorias">
+<input wsam:Action="http://ws/SerieWS/getCategoriasRequest" message="tns:getCategorias"/>
+<output wsam:Action="http://ws/SerieWS/getCategoriasResponse" message="tns:getCategoriasResponse"/>
 </operation>
 </portType>
 <binding name="SerieWSPortBinding" type="tns:SerieWS">
@@ -126,16 +136,7 @@
 <soap:body use="literal"/>
 </input>
 </operation>
-<operation name="findAll">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getBestValSerie">
+<operation name="getAll">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -159,7 +160,16 @@
 <soap:body use="literal"/>
 </input>
 </operation>
-<operation name="getCategorias">
+<operation name="findAll">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getBestValSerie">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -169,6 +179,15 @@
 </output>
 </operation>
 <operation name="findConTitulo">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getCategorias">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

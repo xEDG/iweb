@@ -5,10 +5,12 @@
  */
 package managed;
 
+import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
+import javax.enterprise.context.RequestScoped;
 import javax.xml.ws.WebServiceRef;
-import ws.HasEntrega;
 import ws.Serie;
 import ws.SerieWS_Service;
 
@@ -17,7 +19,7 @@ import ws.SerieWS_Service;
  * @author Rodrii
  */
 @Named(value = "serieManagedBean")
-@Dependent
+@RequestScoped
 public class SerieManagedBean {
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/SerieWS/SerieWS.wsdl")
@@ -26,7 +28,23 @@ public class SerieManagedBean {
     /**
      * Creates a new instance of SerieManagedBean
      */
+    
+    private List<Serie> series;
+    
     public SerieManagedBean() {
+    }
+    
+    @PostConstruct
+    public void init(){
+       this.obtenerSeries();
+    }
+
+    private void obtenerSeries(){
+        this.series = this.findAll();
+    }
+    
+    public List<Serie> getSeries(){
+        return series;
     }
 
     private int count() {
@@ -36,28 +54,28 @@ public class SerieManagedBean {
         return port.count();
     }
 
-    private void create(ws.HasEntrega entity) {
+    private void create(ws.Serie entity) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         ws.SerieWS port = service.getSerieWSPort();
         port.create(entity);
     }
 
-    private void edit(ws.HasEntrega entity) {
+    private void edit(ws.Serie entity) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         ws.SerieWS port = service.getSerieWSPort();
         port.edit(entity);
     }
 
-    private HasEntrega find(java.lang.Object id) {
+    private Serie find(java.lang.Object id) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         ws.SerieWS port = service.getSerieWSPort();
         return port.find(id);
     }
 
-    private java.util.List<ws.HasEntrega> findAll() {
+    private java.util.List<ws.Serie> findAll() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         ws.SerieWS port = service.getSerieWSPort();
@@ -71,11 +89,18 @@ public class SerieManagedBean {
         return port.findConTitulo(titulo);
     }
 
-    private java.util.List<ws.HasEntrega> findRange(java.util.List<java.lang.Integer> range) {
+    private java.util.List<ws.Serie> findRange(java.util.List<java.lang.Integer> range) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         ws.SerieWS port = service.getSerieWSPort();
         return port.findRange(range);
+    }
+
+    private java.util.List<ws.Serie> getAll() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.SerieWS port = service.getSerieWSPort();
+        return port.getAll();
     }
 
     private Serie getBestValSerie() {
@@ -92,11 +117,13 @@ public class SerieManagedBean {
         return port.getCategorias();
     }
 
-    private void remove(ws.HasEntrega entity) {
+    private void remove(ws.Serie entity) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         ws.SerieWS port = service.getSerieWSPort();
         port.remove(entity);
     }
+    
+    
     
 }
