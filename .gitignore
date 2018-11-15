@@ -22,3 +22,5 @@
 Git/DrawDD/DrawDD-ejb/src/conf/persistence.xml
 Git/DrawDD/DrawDD-war/nbproject/jax-ws.xml
 Git/DrawDD/DrawDD-war/nbproject/jaxws-build.xml
+/Git/DrawDD-cliente/nbproject/private/
+/Git/DrawDD-cliente/build/

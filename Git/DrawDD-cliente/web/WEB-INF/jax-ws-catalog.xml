@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/SerieWS/SerieWS?wsdl" uri="wsdl/localhost_8080/SerieWS/SerieWS.wsdl"/>
+    <system systemId="http://localhost:8080/SerieWS/SerieWS?xsd=1" uri="wsdl/localhost_8080/SerieWS/SerieWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/EntregaWS/EntregaWS?wsdl" uri="wsdl/localhost_8080/EntregaWS/EntregaWS.wsdl"/>
+    <system systemId="http://localhost:8080/EntregaWS/EntregaWS?xsd=1" uri="wsdl/localhost_8080/EntregaWS/EntregaWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HasEntregaWS/HasEntregaWS?wsdl" uri="wsdl/localhost_8080/HasEntregaWS/HasEntregaWS.wsdl"/>
+    <system systemId="http://localhost:8080/HasEntregaWS/HasEntregaWS?xsd=1" uri="wsdl/localhost_8080/HasEntregaWS/HasEntregaWS.xsd_1.xsd"/>
+</catalog>
