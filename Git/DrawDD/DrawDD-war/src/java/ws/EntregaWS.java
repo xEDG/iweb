@@ -7,6 +7,7 @@ package ws;
 
 import iweb.entity.Entrega;
 import iweb.facade.EntregaFacade;
+import java.text.ParseException;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.jws.WebService;
