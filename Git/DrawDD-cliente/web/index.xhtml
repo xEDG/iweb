@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>ListaSeries</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div>Visualizacion de las series disponibles</div>
+        <h:dataTable value="#{serieManagedBean.series}" var="serie" border="1">
+            <h:column>
+                <f:facet name="header">
+                    Titulo
+                </f:facet>
+                #{serie.titulo}
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    Categoria
+                </f:facet>
+                #{serie.categoria}
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    Descripcion
+                </f:facet>
+                #{serie.descripcion}
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    Valoracion
+                </f:facet>
+                #{serie.valoracion}
+            </h:column>
+        </h:dataTable>
+        
+    </body>
+</html>

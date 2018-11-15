@@ -86,4 +86,9 @@ public class SerieWS {
         return ejbRef.getCategorias();
     }
     
+    @WebMethod (operationName = "getAll")
+    public List<Serie> getAll() {
+        return ejbRef.getAll();
+    }
+    
 }
