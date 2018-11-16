@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="SerieWebService">
+      <implementation-class>soapws.SerieWebService</implementation-class>
+    </service>
+    <service name="EntregaWebService">
+      <implementation-class>soapws.EntregaWebService</implementation-class>
+    </service>
+    <service name="HasEntregaWebService">
+      <implementation-class>soapws.HasEntregaWebService</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>

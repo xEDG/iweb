@@ -19,7 +19,7 @@ import ws.SerieWS_Service;
  * @author Rodrii
  */
 @Named(value = "serieManagedBean")
-@RequestScoped
+@Dependent
 public class SerieManagedBean {
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/SerieWS/SerieWS.wsdl")

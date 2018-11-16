@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/Drawdede-war/SerieWebService?wsdl" uri="src/conf/xml-resources/web-service-references/SerieWebService/wsdl/localhost_8080/Drawdede-war/SerieWebService.wsdl"/>
+    <system systemId="http://localhost:8080/Drawdede-war/SerieWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/SerieWebService/wsdl/localhost_8080/Drawdede-war/SerieWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Drawdede-war/EntregaWebService?wsdl" uri="src/conf/xml-resources/web-service-references/EntregaWebService/wsdl/localhost_8080/Drawdede-war/EntregaWebService.wsdl"/>
+    <system systemId="http://localhost:8080/Drawdede-war/EntregaWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/EntregaWebService/wsdl/localhost_8080/Drawdede-war/EntregaWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Drawdede-war/HasEntregaWebService?wsdl" uri="src/conf/xml-resources/web-service-references/HasEntregaWebService/wsdl/localhost_8080/Drawdede-war/HasEntregaWebService.wsdl"/>
+    <system systemId="http://localhost:8080/Drawdede-war/HasEntregaWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/HasEntregaWebService/wsdl/localhost_8080/Drawdede-war/HasEntregaWebService.xsd_1.xsd"/>
+</catalog>
