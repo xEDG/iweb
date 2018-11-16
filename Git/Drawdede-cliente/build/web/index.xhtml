@@ -24,12 +24,12 @@ and open the template in the editor.
             <a class="navbar-brand">Drawdede</a>
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Busca cualquier película" aria-label="Search"/>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                <button class="btn btn-outline-success" type="button" style="margin-left:10px">Mis Series</button>
+                <h:commandButton class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search" action="prueba"/>
+                <h:commandButton action="prueba" class="btn btn-outline-success" style="margin-left:10px" value="Mis Series"/>
                 <button class="btn btn-outline-success" type="button" style="margin-left:10px" >Mis Entregas</button>
             </form>
         </nav>
-        <ui:repeat  value="#{serieManagedBean.series}" var="serie" rendered="#{!(serieManagedBean.series.size() == 0)}">
+        <ui:repeat  value="#{indexManagedBean.series}" var="serie" rendered="#{!(indexManagedBean.series.size() == 0)}">
             <div class="card" style="width: 40%; margin: 0 auto; margin-top: 20px">
                 <div class="card-body">
                     <h1>#{serie.titulo}</h1>

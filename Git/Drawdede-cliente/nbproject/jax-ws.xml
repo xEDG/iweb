@@ -2,10 +2,10 @@
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services/>
   <clients>
-    <client name="SerieWebService">
-      <wsdl-url>http://localhost:8080/Drawdede-war/SerieWebService?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/Drawdede-war/SerieWebService.wsdl</local-wsdl-file>
-      <package-name>soapws</package-name>
+    <client name="DrawdedeWebService">
+      <wsdl-url>http://localhost:8080/Drawdede-war/DrawdedeWebService?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/Drawdede-war/DrawdedeWebService.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">ws</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -22,7 +22,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/Drawdede-war/SerieWebService?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/Drawdede-war/DrawdedeWebService?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -32,69 +32,9 @@
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
         </wsimport-option>
-      </wsimport-options>
-    </client>
-    <client name="EntregaWebService">
-      <wsdl-url>http://localhost:8080/Drawdede-war/EntregaWebService?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/Drawdede-war/EntregaWebService.wsdl</local-wsdl-file>
-      <package-name>soapws</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
         <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/Drawdede-war/EntregaWebService?wsdl</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
-    <client name="HasEntregaWebService">
-      <wsdl-url>http://localhost:8080/Drawdede-war/HasEntregaWebService?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/Drawdede-war/HasEntregaWebService.wsdl</local-wsdl-file>
-      <package-name>soapws</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/Drawdede-war/HasEntregaWebService?wsdl</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>ws</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

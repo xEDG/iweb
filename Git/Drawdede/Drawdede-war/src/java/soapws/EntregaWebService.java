@@ -23,65 +23,65 @@ import javax.jws.WebService;
 public class EntregaWebService {
 
     @EJB
-    private EntregaFacade ejbRef;// Add business logic below. (Right-click in editor and choose
+    private EntregaFacade ejbEntregaRef;// Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Web Service Operation")
 
     @WebMethod(operationName = "create")
     @Oneway
     public void create(@WebParam(name = "entity") Entrega entity) {
-        ejbRef.create(entity);
+        ejbEntregaRef.create(entity);
     }
 
     @WebMethod(operationName = "edit")
     @Oneway
     public void edit(@WebParam(name = "entity") Entrega entity) {
-        ejbRef.edit(entity);
+        ejbEntregaRef.edit(entity);
     }
 
     @WebMethod(operationName = "remove")
     @Oneway
     public void remove(@WebParam(name = "entity") Entrega entity) {
-        ejbRef.remove(entity);
+        ejbEntregaRef.remove(entity);
     }
 
     @WebMethod(operationName = "find")
     public Entrega find(@WebParam(name = "id") Object id) {
-        return ejbRef.find(id);
+        return ejbEntregaRef.find(id);
     }
 
     @WebMethod(operationName = "findAll")
     public List<Entrega> findAll() {
-        return ejbRef.findAll();
+        return ejbEntregaRef.findAll();
     }
 
     @WebMethod(operationName = "findRange")
     public List<Entrega> findRange(@WebParam(name = "range") int[] range) {
-        return ejbRef.findRange(range);
+        return ejbEntregaRef.findRange(range);
     }
 
     @WebMethod(operationName = "count")
     public int count() {
-        return ejbRef.count();
+        return ejbEntregaRef.count();
     }
 
     @WebMethod(operationName = "getHulks")
     public List<String> getHulks() {
-        return ejbRef.getHulks();
+        return ejbEntregaRef.getHulks();
     }
 
     @WebMethod(operationName = "getFechaEntregaNotNull")
     public List<Entrega> getFechaEntregaNotNull() {
-        return ejbRef.getFechaEntregaNotNull();
+        return ejbEntregaRef.getFechaEntregaNotNull();
     }
 
     @WebMethod(operationName = "filtroPorAnotacion")
     public List<Entrega> filtroPorAnotacion(@WebParam(name = "anotacion") String anotacion) {
-        return ejbRef.filtroPorAnotacion(anotacion);
+        return ejbEntregaRef.filtroPorAnotacion(anotacion);
     }
 
     @WebMethod(operationName = "filtrarPorPeriodoTiempo")
     public List<Entrega> filtrarPorPeriodoTiempo(@WebParam(name = "d1") String d1, @WebParam(name = "d2") String d2) throws ParseException {
-        return ejbRef.filtrarPorPeriodoTiempo(d1, d2);
+        return ejbEntregaRef.filtrarPorPeriodoTiempo(d1, d2);
     }
     
 }

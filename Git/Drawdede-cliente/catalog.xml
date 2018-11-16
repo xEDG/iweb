@@ -6,4 +6,6 @@
     <system systemId="http://localhost:8080/Drawdede-war/EntregaWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/EntregaWebService/wsdl/localhost_8080/Drawdede-war/EntregaWebService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/Drawdede-war/HasEntregaWebService?wsdl" uri="src/conf/xml-resources/web-service-references/HasEntregaWebService/wsdl/localhost_8080/Drawdede-war/HasEntregaWebService.wsdl"/>
     <system systemId="http://localhost:8080/Drawdede-war/HasEntregaWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/HasEntregaWebService/wsdl/localhost_8080/Drawdede-war/HasEntregaWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Drawdede-war/DrawdedeWebService?wsdl" uri="src/conf/xml-resources/web-service-references/DrawdedeWebService/wsdl/localhost_8080/Drawdede-war/DrawdedeWebService.wsdl"/>
+    <system systemId="http://localhost:8080/Drawdede-war/DrawdedeWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/DrawdedeWebService/wsdl/localhost_8080/Drawdede-war/DrawdedeWebService.xsd_1.xsd"/>
 </catalog>

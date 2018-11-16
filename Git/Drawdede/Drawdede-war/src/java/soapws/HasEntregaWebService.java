@@ -23,50 +23,50 @@ import javax.jws.WebService;
 public class HasEntregaWebService {
 
     @EJB
-    private HasEntregaFacade ejbRef;// Add business logic below. (Right-click in editor and choose
+    private HasEntregaFacade ejbHasEntregaRef;// Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Web Service Operation")
 
     @WebMethod(operationName = "create")
     @Oneway
     public void create(@WebParam(name = "entity") HasEntrega entity) {
-        ejbRef.create(entity);
+        ejbHasEntregaRef.create(entity);
     }
 
     @WebMethod(operationName = "edit")
     @Oneway
     public void edit(@WebParam(name = "entity") HasEntrega entity) {
-        ejbRef.edit(entity);
+        ejbHasEntregaRef.edit(entity);
     }
 
     @WebMethod(operationName = "remove")
     @Oneway
     public void remove(@WebParam(name = "entity") HasEntrega entity) {
-        ejbRef.remove(entity);
+        ejbHasEntregaRef.remove(entity);
     }
 
     @WebMethod(operationName = "find")
     public HasEntrega find(@WebParam(name = "id") Object id) {
-        return ejbRef.find(id);
+        return ejbHasEntregaRef.find(id);
     }
 
     @WebMethod(operationName = "findAll")
     public List<HasEntrega> findAll() {
-        return ejbRef.findAll();
+        return ejbHasEntregaRef.findAll();
     }
 
     @WebMethod(operationName = "findRange")
     public List<HasEntrega> findRange(@WebParam(name = "range") int[] range) {
-        return ejbRef.findRange(range);
+        return ejbHasEntregaRef.findRange(range);
     }
 
     @WebMethod(operationName = "count")
     public int count() {
-        return ejbRef.count();
+        return ejbHasEntregaRef.count();
     }
 
     @WebMethod(operationName = "findIdEntregaConTituloSerie")
     public List<Entrega> findIdEntregaConTituloSerie(@WebParam(name = "ids") List<Integer> ids) {
-        return ejbRef.findIdEntregaConTituloSerie(ids);
+        return ejbHasEntregaRef.findIdEntregaConTituloSerie(ids);
     }
     
 }

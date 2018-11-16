@@ -26,53 +26,21 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-SerieWebService" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/SerieWebService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SerieWebService" destdir="${build.generated.dir}/jax-wsCache/SerieWebService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/SerieWebService/wsdl/localhost_8080/Drawdede-war/SerieWebService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/Drawdede-war/SerieWebService?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/SerieWebService/wsdl/localhost_8080/Drawdede-war/SerieWebService.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/SerieWebService"/>
+    <target name="wsimport-client-DrawdedeWebService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/DrawdedeWebService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/DrawdedeWebService" destdir="${build.generated.dir}/jax-wsCache/DrawdedeWebService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/DrawdedeWebService/wsdl/localhost_8080/Drawdede-war/DrawdedeWebService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/Drawdede-war/DrawdedeWebService?wsdl" xnocompile="true" xendorsed="true" package="ws">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/DrawdedeWebService/wsdl/localhost_8080/Drawdede-war/DrawdedeWebService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/DrawdedeWebService"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/SerieWebService">
+            <fileset dir="${build.generated.dir}/jax-wsCache/DrawdedeWebService">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-SerieWebService" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/soapws"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/SerieWebService"/>
+    <target name="wsimport-client-clean-DrawdedeWebService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/DrawdedeWebService"/>
     </target>
-    <target name="wsimport-client-EntregaWebService" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/EntregaWebService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/EntregaWebService" destdir="${build.generated.dir}/jax-wsCache/EntregaWebService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/EntregaWebService/wsdl/localhost_8080/Drawdede-war/EntregaWebService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/Drawdede-war/EntregaWebService?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/EntregaWebService/wsdl/localhost_8080/Drawdede-war/EntregaWebService.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/EntregaWebService"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/EntregaWebService">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-EntregaWebService" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/soapws"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/EntregaWebService"/>
-    </target>
-    <target name="wsimport-client-HasEntregaWebService" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/HasEntregaWebService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/HasEntregaWebService" destdir="${build.generated.dir}/jax-wsCache/HasEntregaWebService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/HasEntregaWebService/wsdl/localhost_8080/Drawdede-war/HasEntregaWebService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/Drawdede-war/HasEntregaWebService?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/HasEntregaWebService/wsdl/localhost_8080/Drawdede-war/HasEntregaWebService.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/HasEntregaWebService"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/HasEntregaWebService">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-HasEntregaWebService" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/soapws"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/HasEntregaWebService"/>
-    </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-SerieWebService, wsimport-client-EntregaWebService, wsimport-client-HasEntregaWebService"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-DrawdedeWebService"/>
 </project>

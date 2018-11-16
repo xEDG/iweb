@@ -10,6 +10,9 @@
     <service name="HasEntregaWebService">
       <implementation-class>soapws.HasEntregaWebService</implementation-class>
     </service>
+    <service name="DrawdedeWebService">
+      <implementation-class>ws.DrawdedeWebService</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
