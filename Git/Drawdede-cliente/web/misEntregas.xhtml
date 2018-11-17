@@ -24,6 +24,14 @@ and open the template in the editor.
 
         <ui:include src="/WEB-INF/navbar-Entregas.xhtml"/>
 
+        
+        <h:form>
+            <h:inputText p:class="btn btn-outline-success my-2 my-sm-0" p:type="search" p:placeholder="Fecha inicio(YYYY-MM-DD)" value="#{misEntregasManagedBean.t1}" />
+            <h:inputText p:class="btn btn-outline-success my-2 my-sm-0" p:type="search" p:placeholder="Fecha fin (YYYY-MM-DD)" value="#{misEntregasManagedBean.t2}" />
+            <h:commandButton class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Filtrar por fecha" action="#{misEntregasManagedBean.filtrarPorPeriodoDeTiempo()}" />
+        </h:form>
+        
+        
         <ui:repeat  value="#{misEntregasManagedBean.entregas}" var="entrega" rendered="#{!(misEntregasManagedBean.entregas.size() == 0)}">
             <div class="card" style="width: 40%; margin: 0 auto; margin-top: 20px">
                 <div class="card-body">
