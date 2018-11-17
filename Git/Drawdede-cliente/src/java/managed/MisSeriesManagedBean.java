@@ -23,28 +23,31 @@ public class MisSeriesManagedBean {
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/Drawdede-war/DrawdedeWebService.wsdl")
     private DrawdedeWebService_Service service;
-    
+
     private List<Serie> series;
+    private String busqueda;
+    private List<Serie> resultadoBusqueda = null;
 
     /**
      * Creates a new instance of IndexManagedBean
      */
     public MisSeriesManagedBean() {
     }
+
+    /*@PostConstruct
+    public void init() {
+        this.series = resultadoBusqueda;
+        //this.obtenerSeries();
+    }*/
     
-    @PostConstruct
-    public void init(){
-       this.obtenerSeries();
+    public String navegarSeies() {
+        obtenerSeries();
+        return "misSeries";
     }
 
-    private void obtenerSeries(){
+    private void obtenerSeries() {
         this.series = this.findAllSeries();
     }
-
-    public List<Serie> getSeries() {
-        return series;
-    }
-
 
     private java.util.List<ws.Serie> findAllSeries() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
@@ -52,5 +55,37 @@ public class MisSeriesManagedBean {
         ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
         return port.findAllSeries();
     }
-    
+
+    public String buscar() {
+        this.series = this.findSerieConTitulo(this.busqueda);
+        return "misSeries";
+    }
+
+    private java.util.List<ws.Serie> findSerieConTitulo(java.lang.String titulo) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        return port.findSerieConTitulo(titulo);
+    }
+
+    public List<Serie> getResultadoBusqueda() {
+        return resultadoBusqueda;
+    }
+
+    public void setResultadoBusqueda(List<Serie> resultadoBusqueda) {
+        this.resultadoBusqueda = resultadoBusqueda;
+    }
+
+    public String getBusqueda() {
+        return busqueda;
+    }
+
+    public void setBusqueda(String busqueda) {
+        this.busqueda = busqueda;
+    }
+
+    public List<Serie> getSeries() {
+        return series;
+    }
+
 }
