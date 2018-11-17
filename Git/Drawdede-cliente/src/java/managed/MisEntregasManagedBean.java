@@ -9,6 +9,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
+import javax.enterprise.context.RequestScoped;
 import javax.xml.ws.WebServiceRef;
 import ws.DrawdedeWebService_Service;
 import ws.Entrega;
@@ -19,13 +20,13 @@ import ws.ParseException_Exception;
  * @author Angel
  */
 @Named(value = "misEntregasManagedBean")
-@Dependent
+@RequestScoped
 public class MisEntregasManagedBean {
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/Drawdede-war/DrawdedeWebService.wsdl")
     private DrawdedeWebService_Service service;
 
-    List<Entrega> entregas;
+    private List<Entrega> entregas;
     private String busqueda;
     private String t1,t2;
     private List<Entrega> resultadoBusqueda = null;
@@ -68,6 +69,14 @@ public class MisEntregasManagedBean {
 
     public void setResultadoBusqueda(List<Entrega> resultadoBusqueda) {
         this.resultadoBusqueda = resultadoBusqueda;
+    }
+
+    public String getBusqueda() {
+        return busqueda;
+    }
+
+    public void setBusqueda(String busqueda) {
+        this.busqueda = busqueda;
     }
 
     
