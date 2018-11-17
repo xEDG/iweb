@@ -5,6 +5,7 @@
  */
 package managed;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
@@ -39,7 +40,6 @@ public class MisSeriesManagedBean {
         this.series = resultadoBusqueda;
         //this.obtenerSeries();
     }*/
-    
     public String navegarSeies() {
         obtenerSeries();
         return "misSeries";
@@ -68,6 +68,35 @@ public class MisSeriesManagedBean {
         return port.findSerieConTitulo(titulo);
     }
 
+    public String bestSerie() {
+        if (this.series == null) {
+            this.series = new ArrayList<>();
+        } else {
+            this.series.clear();
+        }
+        this.series.add(this.getBestValSerie());
+        return "misSeries";
+    }
+
+    private Serie getBestValSerie() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        return port.getBestValSerie();
+    }
+
+    public String worstSerie() {
+        if (this.series == null) {
+            this.series = new ArrayList<>();
+        } else {
+            this.series.clear();
+        }
+        this.series.add(this.getWorstValSerie());
+        return "misSeries";
+    }
+    
+    
+    
     public List<Serie> getResultadoBusqueda() {
         return resultadoBusqueda;
     }
@@ -86,6 +115,13 @@ public class MisSeriesManagedBean {
 
     public List<Serie> getSeries() {
         return series;
+    }
+
+    private Serie getWorstValSerie() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        return port.getWorstValSerie();
     }
 
 }

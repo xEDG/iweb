@@ -60,6 +60,8 @@ public class ObjectFactory {
     private final static QName _GetFechaEntregaNotNullResponse_QNAME = new QName("http://ws/", "getFechaEntregaNotNullResponse");
     private final static QName _GetHulksEntregas_QNAME = new QName("http://ws/", "getHulksEntregas");
     private final static QName _GetHulksEntregasResponse_QNAME = new QName("http://ws/", "getHulksEntregasResponse");
+    private final static QName _GetWorstValSerie_QNAME = new QName("http://ws/", "getWorstValSerie");
+    private final static QName _GetWorstValSerieResponse_QNAME = new QName("http://ws/", "getWorstValSerieResponse");
     private final static QName _HasEntrega_QNAME = new QName("http://ws/", "hasEntrega");
     private final static QName _RemoveEntrega_QNAME = new QName("http://ws/", "removeEntrega");
     private final static QName _RemoveHasEntrega_QNAME = new QName("http://ws/", "removeHasEntrega");
@@ -359,6 +361,22 @@ public class ObjectFactory {
      */
     public GetHulksEntregasResponse createGetHulksEntregasResponse() {
         return new GetHulksEntregasResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetWorstValSerie }
+     * 
+     */
+    public GetWorstValSerie createGetWorstValSerie() {
+        return new GetWorstValSerie();
+    }
+
+    /**
+     * Create an instance of {@link GetWorstValSerieResponse }
+     * 
+     */
+    public GetWorstValSerieResponse createGetWorstValSerieResponse() {
+        return new GetWorstValSerieResponse();
     }
 
     /**
@@ -723,6 +741,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws/", name = "getHulksEntregasResponse")
     public JAXBElement<GetHulksEntregasResponse> createGetHulksEntregasResponse(GetHulksEntregasResponse value) {
         return new JAXBElement<GetHulksEntregasResponse>(_GetHulksEntregasResponse_QNAME, GetHulksEntregasResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetWorstValSerie }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws/", name = "getWorstValSerie")
+    public JAXBElement<GetWorstValSerie> createGetWorstValSerie(GetWorstValSerie value) {
+        return new JAXBElement<GetWorstValSerie>(_GetWorstValSerie_QNAME, GetWorstValSerie.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetWorstValSerieResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws/", name = "getWorstValSerieResponse")
+    public JAXBElement<GetWorstValSerieResponse> createGetWorstValSerieResponse(GetWorstValSerieResponse value) {
+        return new JAXBElement<GetWorstValSerieResponse>(_GetWorstValSerieResponse_QNAME, GetWorstValSerieResponse.class, null, value);
     }
 
     /**

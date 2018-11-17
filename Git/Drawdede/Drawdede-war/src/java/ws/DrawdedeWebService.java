@@ -63,6 +63,11 @@ public class DrawdedeWebService {
     public Serie getBestValSerie() {
         return ejbRef.getBestValSerie();
     }
+    
+    @WebMethod(operationName = "getWorstValSerie")
+    public Serie getWorstValSerie() {
+        return ejbRef.getWorstValSerie();
+    }
 
     @WebMethod(operationName = "getCategoriasSerie")
     public List<String> getCategoriasSerie() {

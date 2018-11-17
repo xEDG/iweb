@@ -44,6 +44,18 @@ public class SerieFacade extends AbstractFacade<Serie> {
      
     }
     
+    public Serie getWorstValSerie () {
+        Query q;
+        q = this.em.createQuery("SELECT s FROM Serie s WHERE s.valoracion IS NOT NULL ORDER BY s.valoracion ASC");
+        List<Serie> lista = (List) q.getResultList();
+        if (lista.size()>0) {
+            return lista.get(0);
+        } else {
+            return null;
+        }
+     
+    }
+    
     public List<String> getCategorias() {
         Query q;
         q = this.em.createQuery("SELECT s.categoria FROM Serie s WHERE s.categoria IS NOT NULL");

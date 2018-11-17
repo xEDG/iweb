@@ -16,9 +16,14 @@
         <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create">
             <p class="plus">+</p>
         </div>
-        
+
         <ui:include src="/WEB-INF/navbar-Series.xhtml"/>
-        
+
+        <h:form>
+            <h:commandButton class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Best Serie" action="#{misSeriesManagedBean.bestSerie()}" />
+            <h:commandButton class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Worst Serie" action="#{misSeriesManagedBean.worstSerie()}" />
+        </h:form>
+
         <ui:repeat  value="#{misSeriesManagedBean.series}" var="serie" rendered="#{!(misSeriesManagedBean.series.size() == 0)}">
             <div class="card" style="width: 40%; margin: 0 auto; margin-top: 20px">
                 <div class="card-body">
@@ -29,9 +34,9 @@
                 </div>
             </div>
         </ui:repeat>
-        
-        
-                       
+
+
+
         <div style="height:20px"></div>
         <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create">
             <p class="plus">+</p>
