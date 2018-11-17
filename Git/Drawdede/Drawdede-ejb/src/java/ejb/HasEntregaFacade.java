@@ -7,6 +7,7 @@ package ejb;
 
 import entity.Entrega;
 import entity.HasEntrega;
+import entity.Serie;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -32,12 +33,20 @@ public class HasEntregaFacade extends AbstractFacade<HasEntrega> {
         super(HasEntrega.class);
     }
     
-    public List<Entrega> findIdEntregaConTituloSerie(List<Integer> ids){
+    public List<Entrega> findEntregaConIdSerie(int id){
         Query q;
-        q = this.em.createQuery("SELECT h.idEntrega FROM HasEntrega h  WHERE h.idSerie IN :clave");
-        q.setParameter("clave", ids);
+        q = this.em.createQuery("SELECT h FROM HasEntrega h  WHERE h.idSerie.id = :clave");
+        q.setParameter("clave", id);
         List<Entrega> entregas = (List) q.getResultList();
         return entregas;
+    }
+    
+    public Serie findSerieConEntrega(Entrega entrega){
+        Query q;
+        q = this.em.createQuery("SELECT h.idSerie FROM HasEntrega h  WHERE h.idEntrega = :clave");
+        q.setParameter("clave", entrega);
+        Serie serie = (Serie) q.getSingleResult();
+        return serie;
     }
     
 }

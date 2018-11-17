@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para findIdEntregaConTituloSerie complex type.
+ * <p>Clase Java para findEntregasConIdSerieResponse complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="findIdEntregaConTituloSerie"&gt;
+ * &lt;complexType name="findEntregasConIdSerieResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="ids" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="return" type="{http://ws/}entrega" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,41 +29,41 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "findIdEntregaConTituloSerie", propOrder = {
-    "ids"
+@XmlType(name = "findEntregasConIdSerieResponse", propOrder = {
+    "_return"
 })
-public class FindIdEntregaConTituloSerie {
+public class FindEntregasConIdSerieResponse {
 
-    @XmlElement(type = Integer.class)
-    protected List<Integer> ids;
+    @XmlElement(name = "return")
+    protected List<Entrega> _return;
 
     /**
-     * Gets the value of the ids property.
+     * Gets the value of the return property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ids property.
+     * This is why there is not a <CODE>set</CODE> method for the return property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIds().add(newItem);
+     *    getReturn().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Integer }
+     * {@link Entrega }
      * 
      * 
      */
-    public List<Integer> getIds() {
-        if (ids == null) {
-            ids = new ArrayList<Integer>();
+    public List<Entrega> getReturn() {
+        if (_return == null) {
+            _return = new ArrayList<Entrega>();
         }
-        return this.ids;
+        return this._return;
     }
 
 }

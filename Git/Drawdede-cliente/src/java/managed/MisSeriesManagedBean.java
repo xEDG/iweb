@@ -7,7 +7,6 @@ package managed;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.xml.ws.WebServiceRef;

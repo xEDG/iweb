@@ -64,9 +64,9 @@ public class HasEntregaWebService {
         return ejbHasEntregaRef.count();
     }
 
-    @WebMethod(operationName = "findIdEntregaConTituloSerie")
-    public List<Entrega> findIdEntregaConTituloSerie(@WebParam(name = "ids") List<Integer> ids) {
-        return ejbHasEntregaRef.findIdEntregaConTituloSerie(ids);
+    @WebMethod(operationName = "findEntregaConTituloSerie")
+    public List<Entrega> findEntregaConTituloSerie(@WebParam(name = "ids") int ids) {
+        return ejbHasEntregaRef.findEntregaConIdSerie(ids);
     }
     
 }

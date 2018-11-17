@@ -167,8 +167,13 @@ public class DrawdedeWebService {
         return ejbHasEntregaRef.findAll();
     }
 
-    @WebMethod(operationName = "findIdEntregaConTituloSerie")
-    public List<Entrega> findIdEntregaConTituloSerie(@WebParam(name = "ids") List<Integer> ids) {
-        return ejbHasEntregaRef.findIdEntregaConTituloSerie(ids);
+    @WebMethod(operationName = "findEntregasConIdSerie")
+    public List<Entrega> findEntregasConIdSerie(@WebParam(name = "id") int id) {
+        return ejbHasEntregaRef.findEntregaConIdSerie(id);
+    }
+    
+    @WebMethod(operationName = "findSerieConEntrega")
+    public Serie findSerieConEntrega(@WebParam(name = "entrega") Entrega entrega) {
+        return ejbHasEntregaRef.findSerieConEntrega(entrega);
     }
 }

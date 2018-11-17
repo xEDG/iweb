@@ -10,54 +10,6 @@
 <message name="findEntregaResponse">
 <part name="parameters" element="tns:findEntregaResponse"/>
 </message>
-<message name="getBestValSerie">
-<part name="parameters" element="tns:getBestValSerie"/>
-</message>
-<message name="getBestValSerieResponse">
-<part name="parameters" element="tns:getBestValSerieResponse"/>
-</message>
-<message name="findAllSeries">
-<part name="parameters" element="tns:findAllSeries"/>
-</message>
-<message name="findAllSeriesResponse">
-<part name="parameters" element="tns:findAllSeriesResponse"/>
-</message>
-<message name="createSerie">
-<part name="parameters" element="tns:createSerie"/>
-</message>
-<message name="createEntrega">
-<part name="parameters" element="tns:createEntrega"/>
-</message>
-<message name="editSerie">
-<part name="parameters" element="tns:editSerie"/>
-</message>
-<message name="findSerie">
-<part name="parameters" element="tns:findSerie"/>
-</message>
-<message name="findSerieResponse">
-<part name="parameters" element="tns:findSerieResponse"/>
-</message>
-<message name="editEntrega">
-<part name="parameters" element="tns:editEntrega"/>
-</message>
-<message name="removeSerie">
-<part name="parameters" element="tns:removeSerie"/>
-</message>
-<message name="removeEntrega">
-<part name="parameters" element="tns:removeEntrega"/>
-</message>
-<message name="createHasEntrega">
-<part name="parameters" element="tns:createHasEntrega"/>
-</message>
-<message name="findHasEntrega">
-<part name="parameters" element="tns:findHasEntrega"/>
-</message>
-<message name="findHasEntregaResponse">
-<part name="parameters" element="tns:findHasEntregaResponse"/>
-</message>
-<message name="editHasEntrega">
-<part name="parameters" element="tns:editHasEntrega"/>
-</message>
 <message name="findAllEntregas">
 <part name="parameters" element="tns:findAllEntregas"/>
 </message>
@@ -70,8 +22,62 @@
 <message name="getHulksEntregasResponse">
 <part name="parameters" element="tns:getHulksEntregasResponse"/>
 </message>
+<message name="removeSerie">
+<part name="parameters" element="tns:removeSerie"/>
+</message>
+<message name="editEntrega">
+<part name="parameters" element="tns:editEntrega"/>
+</message>
+<message name="createHasEntrega">
+<part name="parameters" element="tns:createHasEntrega"/>
+</message>
+<message name="findAllSeries">
+<part name="parameters" element="tns:findAllSeries"/>
+</message>
+<message name="findAllSeriesResponse">
+<part name="parameters" element="tns:findAllSeriesResponse"/>
+</message>
+<message name="findSerie">
+<part name="parameters" element="tns:findSerie"/>
+</message>
+<message name="findSerieResponse">
+<part name="parameters" element="tns:findSerieResponse"/>
+</message>
+<message name="createSerie">
+<part name="parameters" element="tns:createSerie"/>
+</message>
+<message name="createEntrega">
+<part name="parameters" element="tns:createEntrega"/>
+</message>
+<message name="getWorstValSerie">
+<part name="parameters" element="tns:getWorstValSerie"/>
+</message>
+<message name="getWorstValSerieResponse">
+<part name="parameters" element="tns:getWorstValSerieResponse"/>
+</message>
+<message name="editSerie">
+<part name="parameters" element="tns:editSerie"/>
+</message>
+<message name="getBestValSerie">
+<part name="parameters" element="tns:getBestValSerie"/>
+</message>
+<message name="getBestValSerieResponse">
+<part name="parameters" element="tns:getBestValSerieResponse"/>
+</message>
+<message name="removeEntrega">
+<part name="parameters" element="tns:removeEntrega"/>
+</message>
+<message name="editHasEntrega">
+<part name="parameters" element="tns:editHasEntrega"/>
+</message>
 <message name="removeHasEntrega">
 <part name="parameters" element="tns:removeHasEntrega"/>
+</message>
+<message name="findHasEntrega">
+<part name="parameters" element="tns:findHasEntrega"/>
+</message>
+<message name="findHasEntregaResponse">
+<part name="parameters" element="tns:findHasEntregaResponse"/>
 </message>
 <message name="getFechaEntregaNotNull">
 <part name="parameters" element="tns:getFechaEntregaNotNull"/>
@@ -79,29 +85,35 @@
 <message name="getFechaEntregaNotNullResponse">
 <part name="parameters" element="tns:getFechaEntregaNotNullResponse"/>
 </message>
-<message name="findSerieConTitulo">
-<part name="parameters" element="tns:findSerieConTitulo"/>
-</message>
-<message name="findSerieConTituloResponse">
-<part name="parameters" element="tns:findSerieConTituloResponse"/>
-</message>
-<message name="findIdEntregaConTituloSerie">
-<part name="parameters" element="tns:findIdEntregaConTituloSerie"/>
-</message>
-<message name="findIdEntregaConTituloSerieResponse">
-<part name="parameters" element="tns:findIdEntregaConTituloSerieResponse"/>
-</message>
 <message name="getCategoriasSerie">
 <part name="parameters" element="tns:getCategoriasSerie"/>
 </message>
 <message name="getCategoriasSerieResponse">
 <part name="parameters" element="tns:getCategoriasSerieResponse"/>
 </message>
+<message name="filtroPorAnotacionEntrega">
+<part name="parameters" element="tns:filtroPorAnotacionEntrega"/>
+</message>
+<message name="filtroPorAnotacionEntregaResponse">
+<part name="parameters" element="tns:filtroPorAnotacionEntregaResponse"/>
+</message>
 <message name="findAllHasEntregas">
 <part name="parameters" element="tns:findAllHasEntregas"/>
 </message>
 <message name="findAllHasEntregasResponse">
 <part name="parameters" element="tns:findAllHasEntregasResponse"/>
+</message>
+<message name="findEntregasConIdSerie">
+<part name="parameters" element="tns:findEntregasConIdSerie"/>
+</message>
+<message name="findEntregasConIdSerieResponse">
+<part name="parameters" element="tns:findEntregasConIdSerieResponse"/>
+</message>
+<message name="findSerieConTitulo">
+<part name="parameters" element="tns:findSerieConTitulo"/>
+</message>
+<message name="findSerieConTituloResponse">
+<part name="parameters" element="tns:findSerieConTituloResponse"/>
 </message>
 <message name="filtrarEntregaPorPeriodoTiempo">
 <part name="parameters" element="tns:filtrarEntregaPorPeriodoTiempo"/>
@@ -112,62 +124,16 @@
 <message name="ParseException">
 <part name="fault" element="tns:ParseException"/>
 </message>
-<message name="filtroPorAnotacionEntrega">
-<part name="parameters" element="tns:filtroPorAnotacionEntrega"/>
+<message name="findSerieConEntrega">
+<part name="parameters" element="tns:findSerieConEntrega"/>
 </message>
-<message name="filtroPorAnotacionEntregaResponse">
-<part name="parameters" element="tns:filtroPorAnotacionEntregaResponse"/>
-</message>
-<message name="getWorstValSerie">
-<part name="parameters" element="tns:getWorstValSerie"/>
-</message>
-<message name="getWorstValSerieResponse">
-<part name="parameters" element="tns:getWorstValSerieResponse"/>
+<message name="findSerieConEntregaResponse">
+<part name="parameters" element="tns:findSerieConEntregaResponse"/>
 </message>
 <portType name="DrawdedeWebService">
 <operation name="findEntrega">
 <input wsam:Action="http://ws/DrawdedeWebService/findEntregaRequest" message="tns:findEntrega"/>
 <output wsam:Action="http://ws/DrawdedeWebService/findEntregaResponse" message="tns:findEntregaResponse"/>
-</operation>
-<operation name="getBestValSerie">
-<input wsam:Action="http://ws/DrawdedeWebService/getBestValSerieRequest" message="tns:getBestValSerie"/>
-<output wsam:Action="http://ws/DrawdedeWebService/getBestValSerieResponse" message="tns:getBestValSerieResponse"/>
-</operation>
-<operation name="findAllSeries">
-<input wsam:Action="http://ws/DrawdedeWebService/findAllSeriesRequest" message="tns:findAllSeries"/>
-<output wsam:Action="http://ws/DrawdedeWebService/findAllSeriesResponse" message="tns:findAllSeriesResponse"/>
-</operation>
-<operation name="createSerie">
-<input wsam:Action="http://ws/DrawdedeWebService/createSerie" message="tns:createSerie"/>
-</operation>
-<operation name="createEntrega">
-<input wsam:Action="http://ws/DrawdedeWebService/createEntrega" message="tns:createEntrega"/>
-</operation>
-<operation name="editSerie">
-<input wsam:Action="http://ws/DrawdedeWebService/editSerie" message="tns:editSerie"/>
-</operation>
-<operation name="findSerie">
-<input wsam:Action="http://ws/DrawdedeWebService/findSerieRequest" message="tns:findSerie"/>
-<output wsam:Action="http://ws/DrawdedeWebService/findSerieResponse" message="tns:findSerieResponse"/>
-</operation>
-<operation name="editEntrega">
-<input wsam:Action="http://ws/DrawdedeWebService/editEntrega" message="tns:editEntrega"/>
-</operation>
-<operation name="removeSerie">
-<input wsam:Action="http://ws/DrawdedeWebService/removeSerie" message="tns:removeSerie"/>
-</operation>
-<operation name="removeEntrega">
-<input wsam:Action="http://ws/DrawdedeWebService/removeEntrega" message="tns:removeEntrega"/>
-</operation>
-<operation name="createHasEntrega">
-<input wsam:Action="http://ws/DrawdedeWebService/createHasEntrega" message="tns:createHasEntrega"/>
-</operation>
-<operation name="findHasEntrega">
-<input wsam:Action="http://ws/DrawdedeWebService/findHasEntregaRequest" message="tns:findHasEntrega"/>
-<output wsam:Action="http://ws/DrawdedeWebService/findHasEntregaResponse" message="tns:findHasEntregaResponse"/>
-</operation>
-<operation name="editHasEntrega">
-<input wsam:Action="http://ws/DrawdedeWebService/editHasEntrega" message="tns:editHasEntrega"/>
 </operation>
 <operation name="findAllEntregas">
 <input wsam:Action="http://ws/DrawdedeWebService/findAllEntregasRequest" message="tns:findAllEntregas"/>
@@ -177,41 +143,85 @@
 <input wsam:Action="http://ws/DrawdedeWebService/getHulksEntregasRequest" message="tns:getHulksEntregas"/>
 <output wsam:Action="http://ws/DrawdedeWebService/getHulksEntregasResponse" message="tns:getHulksEntregasResponse"/>
 </operation>
+<operation name="removeSerie">
+<input wsam:Action="http://ws/DrawdedeWebService/removeSerie" message="tns:removeSerie"/>
+</operation>
+<operation name="editEntrega">
+<input wsam:Action="http://ws/DrawdedeWebService/editEntrega" message="tns:editEntrega"/>
+</operation>
+<operation name="createHasEntrega">
+<input wsam:Action="http://ws/DrawdedeWebService/createHasEntrega" message="tns:createHasEntrega"/>
+</operation>
+<operation name="findAllSeries">
+<input wsam:Action="http://ws/DrawdedeWebService/findAllSeriesRequest" message="tns:findAllSeries"/>
+<output wsam:Action="http://ws/DrawdedeWebService/findAllSeriesResponse" message="tns:findAllSeriesResponse"/>
+</operation>
+<operation name="findSerie">
+<input wsam:Action="http://ws/DrawdedeWebService/findSerieRequest" message="tns:findSerie"/>
+<output wsam:Action="http://ws/DrawdedeWebService/findSerieResponse" message="tns:findSerieResponse"/>
+</operation>
+<operation name="createSerie">
+<input wsam:Action="http://ws/DrawdedeWebService/createSerie" message="tns:createSerie"/>
+</operation>
+<operation name="createEntrega">
+<input wsam:Action="http://ws/DrawdedeWebService/createEntrega" message="tns:createEntrega"/>
+</operation>
+<operation name="getWorstValSerie">
+<input wsam:Action="http://ws/DrawdedeWebService/getWorstValSerieRequest" message="tns:getWorstValSerie"/>
+<output wsam:Action="http://ws/DrawdedeWebService/getWorstValSerieResponse" message="tns:getWorstValSerieResponse"/>
+</operation>
+<operation name="editSerie">
+<input wsam:Action="http://ws/DrawdedeWebService/editSerie" message="tns:editSerie"/>
+</operation>
+<operation name="getBestValSerie">
+<input wsam:Action="http://ws/DrawdedeWebService/getBestValSerieRequest" message="tns:getBestValSerie"/>
+<output wsam:Action="http://ws/DrawdedeWebService/getBestValSerieResponse" message="tns:getBestValSerieResponse"/>
+</operation>
+<operation name="removeEntrega">
+<input wsam:Action="http://ws/DrawdedeWebService/removeEntrega" message="tns:removeEntrega"/>
+</operation>
+<operation name="editHasEntrega">
+<input wsam:Action="http://ws/DrawdedeWebService/editHasEntrega" message="tns:editHasEntrega"/>
+</operation>
 <operation name="removeHasEntrega">
 <input wsam:Action="http://ws/DrawdedeWebService/removeHasEntrega" message="tns:removeHasEntrega"/>
+</operation>
+<operation name="findHasEntrega">
+<input wsam:Action="http://ws/DrawdedeWebService/findHasEntregaRequest" message="tns:findHasEntrega"/>
+<output wsam:Action="http://ws/DrawdedeWebService/findHasEntregaResponse" message="tns:findHasEntregaResponse"/>
 </operation>
 <operation name="getFechaEntregaNotNull">
 <input wsam:Action="http://ws/DrawdedeWebService/getFechaEntregaNotNullRequest" message="tns:getFechaEntregaNotNull"/>
 <output wsam:Action="http://ws/DrawdedeWebService/getFechaEntregaNotNullResponse" message="tns:getFechaEntregaNotNullResponse"/>
 </operation>
-<operation name="findSerieConTitulo">
-<input wsam:Action="http://ws/DrawdedeWebService/findSerieConTituloRequest" message="tns:findSerieConTitulo"/>
-<output wsam:Action="http://ws/DrawdedeWebService/findSerieConTituloResponse" message="tns:findSerieConTituloResponse"/>
-</operation>
-<operation name="findIdEntregaConTituloSerie">
-<input wsam:Action="http://ws/DrawdedeWebService/findIdEntregaConTituloSerieRequest" message="tns:findIdEntregaConTituloSerie"/>
-<output wsam:Action="http://ws/DrawdedeWebService/findIdEntregaConTituloSerieResponse" message="tns:findIdEntregaConTituloSerieResponse"/>
-</operation>
 <operation name="getCategoriasSerie">
 <input wsam:Action="http://ws/DrawdedeWebService/getCategoriasSerieRequest" message="tns:getCategoriasSerie"/>
 <output wsam:Action="http://ws/DrawdedeWebService/getCategoriasSerieResponse" message="tns:getCategoriasSerieResponse"/>
 </operation>
+<operation name="filtroPorAnotacionEntrega">
+<input wsam:Action="http://ws/DrawdedeWebService/filtroPorAnotacionEntregaRequest" message="tns:filtroPorAnotacionEntrega"/>
+<output wsam:Action="http://ws/DrawdedeWebService/filtroPorAnotacionEntregaResponse" message="tns:filtroPorAnotacionEntregaResponse"/>
+</operation>
 <operation name="findAllHasEntregas">
 <input wsam:Action="http://ws/DrawdedeWebService/findAllHasEntregasRequest" message="tns:findAllHasEntregas"/>
 <output wsam:Action="http://ws/DrawdedeWebService/findAllHasEntregasResponse" message="tns:findAllHasEntregasResponse"/>
+</operation>
+<operation name="findEntregasConIdSerie">
+<input wsam:Action="http://ws/DrawdedeWebService/findEntregasConIdSerieRequest" message="tns:findEntregasConIdSerie"/>
+<output wsam:Action="http://ws/DrawdedeWebService/findEntregasConIdSerieResponse" message="tns:findEntregasConIdSerieResponse"/>
+</operation>
+<operation name="findSerieConTitulo">
+<input wsam:Action="http://ws/DrawdedeWebService/findSerieConTituloRequest" message="tns:findSerieConTitulo"/>
+<output wsam:Action="http://ws/DrawdedeWebService/findSerieConTituloResponse" message="tns:findSerieConTituloResponse"/>
 </operation>
 <operation name="filtrarEntregaPorPeriodoTiempo">
 <input wsam:Action="http://ws/DrawdedeWebService/filtrarEntregaPorPeriodoTiempoRequest" message="tns:filtrarEntregaPorPeriodoTiempo"/>
 <output wsam:Action="http://ws/DrawdedeWebService/filtrarEntregaPorPeriodoTiempoResponse" message="tns:filtrarEntregaPorPeriodoTiempoResponse"/>
 <fault message="tns:ParseException" name="ParseException" wsam:Action="http://ws/DrawdedeWebService/filtrarEntregaPorPeriodoTiempo/Fault/ParseException"/>
 </operation>
-<operation name="filtroPorAnotacionEntrega">
-<input wsam:Action="http://ws/DrawdedeWebService/filtroPorAnotacionEntregaRequest" message="tns:filtroPorAnotacionEntrega"/>
-<output wsam:Action="http://ws/DrawdedeWebService/filtroPorAnotacionEntregaResponse" message="tns:filtroPorAnotacionEntregaResponse"/>
-</operation>
-<operation name="getWorstValSerie">
-<input wsam:Action="http://ws/DrawdedeWebService/getWorstValSerieRequest" message="tns:getWorstValSerie"/>
-<output wsam:Action="http://ws/DrawdedeWebService/getWorstValSerieResponse" message="tns:getWorstValSerieResponse"/>
+<operation name="findSerieConEntrega">
+<input wsam:Action="http://ws/DrawdedeWebService/findSerieConEntregaRequest" message="tns:findSerieConEntrega"/>
+<output wsam:Action="http://ws/DrawdedeWebService/findSerieConEntregaResponse" message="tns:findSerieConEntregaResponse"/>
 </operation>
 </portType>
 <binding name="DrawdedeWebServicePortBinding" type="tns:DrawdedeWebService">
@@ -225,7 +235,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getBestValSerie">
+<operation name="findAllEntregas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -234,7 +244,43 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="getHulksEntregas">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="removeSerie">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+</operation>
+<operation name="editEntrega">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+</operation>
+<operation name="createHasEntrega">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+</operation>
 <operation name="findAllSeries">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="findSerie">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -255,13 +301,7 @@
 <soap:body use="literal"/>
 </input>
 </operation>
-<operation name="editSerie">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-</operation>
-<operation name="findSerie">
+<operation name="getWorstValSerie">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -270,17 +310,20 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="editEntrega">
+<operation name="editSerie">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
 </input>
 </operation>
-<operation name="removeSerie">
+<operation name="getBestValSerie">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
 </input>
+<output>
+<soap:body use="literal"/>
+</output>
 </operation>
 <operation name="removeEntrega">
 <soap:operation soapAction=""/>
@@ -288,7 +331,13 @@
 <soap:body use="literal"/>
 </input>
 </operation>
-<operation name="createHasEntrega">
+<operation name="editHasEntrega">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+</operation>
+<operation name="removeHasEntrega">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -303,55 +352,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="editHasEntrega">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-</operation>
-<operation name="findAllEntregas">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getHulksEntregas">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="removeHasEntrega">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-</operation>
 <operation name="getFechaEntregaNotNull">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="findSerieConTitulo">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="findIdEntregaConTituloSerie">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -369,7 +370,34 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="filtroPorAnotacionEntrega">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="findAllHasEntregas">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="findEntregasConIdSerie">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="findSerieConTitulo">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -390,16 +418,7 @@
 <soap:fault name="ParseException" use="literal"/>
 </fault>
 </operation>
-<operation name="filtroPorAnotacionEntrega">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getWorstValSerie">
+<operation name="findSerieConEntrega">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

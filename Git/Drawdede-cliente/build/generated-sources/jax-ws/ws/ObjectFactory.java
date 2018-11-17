@@ -44,11 +44,13 @@ public class ObjectFactory {
     private final static QName _FindAllSeriesResponse_QNAME = new QName("http://ws/", "findAllSeriesResponse");
     private final static QName _FindEntrega_QNAME = new QName("http://ws/", "findEntrega");
     private final static QName _FindEntregaResponse_QNAME = new QName("http://ws/", "findEntregaResponse");
+    private final static QName _FindEntregasConIdSerie_QNAME = new QName("http://ws/", "findEntregasConIdSerie");
+    private final static QName _FindEntregasConIdSerieResponse_QNAME = new QName("http://ws/", "findEntregasConIdSerieResponse");
     private final static QName _FindHasEntrega_QNAME = new QName("http://ws/", "findHasEntrega");
     private final static QName _FindHasEntregaResponse_QNAME = new QName("http://ws/", "findHasEntregaResponse");
-    private final static QName _FindIdEntregaConTituloSerie_QNAME = new QName("http://ws/", "findIdEntregaConTituloSerie");
-    private final static QName _FindIdEntregaConTituloSerieResponse_QNAME = new QName("http://ws/", "findIdEntregaConTituloSerieResponse");
     private final static QName _FindSerie_QNAME = new QName("http://ws/", "findSerie");
+    private final static QName _FindSerieConEntrega_QNAME = new QName("http://ws/", "findSerieConEntrega");
+    private final static QName _FindSerieConEntregaResponse_QNAME = new QName("http://ws/", "findSerieConEntregaResponse");
     private final static QName _FindSerieConTitulo_QNAME = new QName("http://ws/", "findSerieConTitulo");
     private final static QName _FindSerieConTituloResponse_QNAME = new QName("http://ws/", "findSerieConTituloResponse");
     private final static QName _FindSerieResponse_QNAME = new QName("http://ws/", "findSerieResponse");
@@ -236,6 +238,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link FindEntregasConIdSerie }
+     * 
+     */
+    public FindEntregasConIdSerie createFindEntregasConIdSerie() {
+        return new FindEntregasConIdSerie();
+    }
+
+    /**
+     * Create an instance of {@link FindEntregasConIdSerieResponse }
+     * 
+     */
+    public FindEntregasConIdSerieResponse createFindEntregasConIdSerieResponse() {
+        return new FindEntregasConIdSerieResponse();
+    }
+
+    /**
      * Create an instance of {@link FindHasEntrega }
      * 
      */
@@ -252,27 +270,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FindIdEntregaConTituloSerie }
-     * 
-     */
-    public FindIdEntregaConTituloSerie createFindIdEntregaConTituloSerie() {
-        return new FindIdEntregaConTituloSerie();
-    }
-
-    /**
-     * Create an instance of {@link FindIdEntregaConTituloSerieResponse }
-     * 
-     */
-    public FindIdEntregaConTituloSerieResponse createFindIdEntregaConTituloSerieResponse() {
-        return new FindIdEntregaConTituloSerieResponse();
-    }
-
-    /**
      * Create an instance of {@link FindSerie }
      * 
      */
     public FindSerie createFindSerie() {
         return new FindSerie();
+    }
+
+    /**
+     * Create an instance of {@link FindSerieConEntrega }
+     * 
+     */
+    public FindSerieConEntrega createFindSerieConEntrega() {
+        return new FindSerieConEntrega();
+    }
+
+    /**
+     * Create an instance of {@link FindSerieConEntregaResponse }
+     * 
+     */
+    public FindSerieConEntregaResponse createFindSerieConEntregaResponse() {
+        return new FindSerieConEntregaResponse();
     }
 
     /**
@@ -600,6 +618,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindEntregasConIdSerie }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws/", name = "findEntregasConIdSerie")
+    public JAXBElement<FindEntregasConIdSerie> createFindEntregasConIdSerie(FindEntregasConIdSerie value) {
+        return new JAXBElement<FindEntregasConIdSerie>(_FindEntregasConIdSerie_QNAME, FindEntregasConIdSerie.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindEntregasConIdSerieResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws/", name = "findEntregasConIdSerieResponse")
+    public JAXBElement<FindEntregasConIdSerieResponse> createFindEntregasConIdSerieResponse(FindEntregasConIdSerieResponse value) {
+        return new JAXBElement<FindEntregasConIdSerieResponse>(_FindEntregasConIdSerieResponse_QNAME, FindEntregasConIdSerieResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link FindHasEntrega }{@code >}}
      * 
      */
@@ -618,30 +654,30 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FindIdEntregaConTituloSerie }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws/", name = "findIdEntregaConTituloSerie")
-    public JAXBElement<FindIdEntregaConTituloSerie> createFindIdEntregaConTituloSerie(FindIdEntregaConTituloSerie value) {
-        return new JAXBElement<FindIdEntregaConTituloSerie>(_FindIdEntregaConTituloSerie_QNAME, FindIdEntregaConTituloSerie.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FindIdEntregaConTituloSerieResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws/", name = "findIdEntregaConTituloSerieResponse")
-    public JAXBElement<FindIdEntregaConTituloSerieResponse> createFindIdEntregaConTituloSerieResponse(FindIdEntregaConTituloSerieResponse value) {
-        return new JAXBElement<FindIdEntregaConTituloSerieResponse>(_FindIdEntregaConTituloSerieResponse_QNAME, FindIdEntregaConTituloSerieResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link FindSerie }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws/", name = "findSerie")
     public JAXBElement<FindSerie> createFindSerie(FindSerie value) {
         return new JAXBElement<FindSerie>(_FindSerie_QNAME, FindSerie.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindSerieConEntrega }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws/", name = "findSerieConEntrega")
+    public JAXBElement<FindSerieConEntrega> createFindSerieConEntrega(FindSerieConEntrega value) {
+        return new JAXBElement<FindSerieConEntrega>(_FindSerieConEntrega_QNAME, FindSerieConEntrega.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindSerieConEntregaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws/", name = "findSerieConEntregaResponse")
+    public JAXBElement<FindSerieConEntregaResponse> createFindSerieConEntregaResponse(FindSerieConEntregaResponse value) {
+        return new JAXBElement<FindSerieConEntregaResponse>(_FindSerieConEntregaResponse_QNAME, FindSerieConEntregaResponse.class, null, value);
     }
 
     /**

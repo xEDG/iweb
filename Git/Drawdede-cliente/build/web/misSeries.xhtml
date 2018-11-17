@@ -24,17 +24,21 @@
             <h:commandButton class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Worst Serie" action="#{misSeriesManagedBean.worstSerie()}" />
         </h:form>
 
-        <ui:repeat  value="#{misSeriesManagedBean.series}" var="serie" rendered="#{!(misSeriesManagedBean.series.size() == 0)}">
-            <div class="card" style="width: 40%; margin: 0 auto; margin-top: 20px">
-                <div class="card-body">
-                    <h1>#{serie.titulo}</h1>
-                    <h1>#{serie.categoria}</h1>
-                    <h1>#{serie.descripcion}</h1>
-                    <h1>#{serie.valoracion}</h1>
+       
+            <ui:repeat  value="#{misSeriesManagedBean.series}" var="serie" rendered="#{!(misSeriesManagedBean.series.size() == 0)}">
+                <div class="card" style="width: 40%; margin: 0 auto; margin-top: 20px">
+                    <div class="card-body">
+                        <h1>#{serie.titulo}</h1>
+                        <h1>#{serie.categoria}</h1>
+                        <h1>#{serie.descripcion}</h1>
+                        <h1>#{serie.valoracion}</h1>
+                    </div>
                 </div>
-            </div>
-        </ui:repeat>
+            </ui:repeat>
 
+        <h:form>
+            <h:commandLink action="#{misEntregasManagedBean.entregasAsociadasASerie(1)}" value="ola" />
+        </h:form>
 
 
         <div style="height:20px"></div>

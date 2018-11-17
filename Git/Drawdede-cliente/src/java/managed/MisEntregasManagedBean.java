@@ -5,20 +5,19 @@
  */
 package managed;
 
+import java.io.Serializable;
 import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.inject.Named;
-import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.xml.ws.WebServiceRef;
 import ws.DrawdedeWebService_Service;
 import ws.Entrega;
 import ws.ParseException_Exception;
+import ws.Serie;
 
-/**
- *
- * @author Angel
- */
+
 @Named(value = "misEntregasManagedBean")
 @RequestScoped
 public class MisEntregasManagedBean {
@@ -94,9 +93,15 @@ public class MisEntregasManagedBean {
     public void setBusqueda(String busqueda) {
         this.busqueda = busqueda;
     }
-
     
-   
+    public String entregasAsociadasASerie(int id){
+        //this.entregas = this.findEntregasConIdSerie(id);
+        return "misEntregas";
+    }
+    
+    public String getSerieconEntrega(Entrega entrega){
+        return this.findSerieConEntrega(entrega).getTitulo();
+    }
 
     
     private java.util.List<ws.Entrega> findAllEntregas() {
@@ -119,6 +124,24 @@ public class MisEntregasManagedBean {
         ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
         return port.filtrarEntregaPorPeriodoTiempo(d1, d2);
     }
+
+    private java.util.List<ws.Entrega> findEntregasConIdSerie(int id) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        return port.findEntregasConIdSerie(id);
+    }
+
+    private Serie findSerieConEntrega(ws.Entrega entrega) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        return port.findSerieConEntrega(entrega);
+    }
+
+   
+
+    
 
     
     
