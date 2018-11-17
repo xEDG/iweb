@@ -17,9 +17,9 @@ import ws.Serie;
  *
  * @author Rodrii
  */
-@Named(value = "indexManagedBean")
+@Named(value = "misSeriesManagedBean")
 @RequestScoped
-public class IndexManagedBean {
+public class MisSeriesManagedBean {
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/Drawdede-war/DrawdedeWebService.wsdl")
     private DrawdedeWebService_Service service;
@@ -29,7 +29,7 @@ public class IndexManagedBean {
     /**
      * Creates a new instance of IndexManagedBean
      */
-    public IndexManagedBean() {
+    public MisSeriesManagedBean() {
     }
     
     @PostConstruct

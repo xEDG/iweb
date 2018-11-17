@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Rodrii/Documents/GitHub/iweb/Git/Drawdede-cliente/src/java/managed/PruebaManagedBean.java</file>
-            <file>file:/C:/Users/Rodrii/Documents/GitHub/iweb/Git/Drawdede-cliente/src/java/managed/SerieManagedBean.java</file>
+            <file>file:/C:/Users/Rodrii/Documents/GitHub/iweb/Git/Drawdede-cliente/web/index.xhtml</file>
+            <file>file:/C:/Users/Rodrii/Documents/GitHub/iweb/Git/Drawdede-cliente/src/java/managed/testManagedBean.java</file>
+            <file>file:/C:/Users/Rodrii/Documents/GitHub/iweb/Git/Drawdede-cliente/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Rodrii/Documents/GitHub/iweb/Git/Drawdede-cliente/src/java/managed/MisSeriesManagedBean.java</file>
+            <file>file:/C:/Users/Rodrii/Documents/GitHub/iweb/Git/Drawdede-cliente/web/misSeries.xhtml</file>
         </group>
     </open-files>
 </project-private>
