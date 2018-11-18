@@ -47,9 +47,9 @@ public class editarSerieManagedBean {
         return id;
     }
 
-    /*public void setId(int id) {
+    public void setId(int id) {
         this.id = id;
-    }*/
+    }
 
     public String getCategoria() {
         return categoria;
@@ -82,6 +82,10 @@ public class editarSerieManagedBean {
         return "editarSerie?faces-redirect=true";
     } // :)
 
+    public void onParameterReceived(){
+        this.serie = this.findSerie(id);
+    }
+    
     
     public String editar () {
         boolean hasChanged = false;
