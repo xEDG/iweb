@@ -29,6 +29,7 @@ public class MisEntregasManagedBean {
     private String busqueda;
     private String t1,t2;
     private List<Entrega> resultadoBusqueda = null;
+    
     /**
      * Creates a new instance of MisEntregasManagedBean
      */
@@ -138,10 +139,6 @@ public class MisEntregasManagedBean {
         ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
         return port.findSerieConEntrega(entrega);
     }
-
-   
-
-    
 
     
     

@@ -24,7 +24,9 @@
             <ui:repeat  value="#{misSeriesManagedBean.series}" var="serie" rendered="#{!(misSeriesManagedBean.series.size() == 0)}">
                 <div class="card" style="width: 100%; margin: 0 auto; margin-top: 20px; height: 250px">
                     <div class="card-body" >
-                        <h1 style="text-align: center">#{serie.titulo}</h1>
+                        <a href="entregasSerie.jsf?id=#{serie.id}">
+                            <h1>#{serie.titulo}</h1>
+                        </a>
                         <hr/>
                         <h3>Categoría: #{serie.categoria}</h3>
                         <h3>Descripción: #{serie.descripcion}</h3>

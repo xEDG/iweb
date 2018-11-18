@@ -35,7 +35,7 @@ public class HasEntregaFacade extends AbstractFacade<HasEntrega> {
     
     public List<Entrega> findEntregaConIdSerie(int id){
         Query q;
-        q = this.em.createQuery("SELECT h FROM HasEntrega h  WHERE h.idSerie.id = :clave");
+        q = this.em.createQuery("SELECT h.idEntrega FROM HasEntrega h  WHERE h.idSerie.id = :clave");
         q.setParameter("clave", id);
         List<Entrega> entregas = (List) q.getResultList();
         return entregas;
