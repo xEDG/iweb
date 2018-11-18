@@ -26,22 +26,6 @@ public class editarSerieManagedBean {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/Drawdede-war/DrawdedeWebService.wsdl")
     private DrawdedeWebService_Service service;
     
-    @ManagedProperty(value="#{misSeriesManagedBean}")
-    private MisSeriesManagedBean msmb; // +setter
-    
-    @PostConstruct
-    public void init () {
-        msmb = new MisSeriesManagedBean();
-    }
-
-    public MisSeriesManagedBean getMsmb() {
-        return msmb;
-    }
-
-    public void setMsmb(MisSeriesManagedBean msmb) {
-        this.msmb = msmb;
-    }
-
     private Serie serie;
     
     
@@ -107,10 +91,18 @@ public class editarSerieManagedBean {
 
     public void onParameterReceived(){
         this.serie = this.findSerie(id);
+        //título y categoría no pueden ser nulos
         this.setTitulo(serie.getTitulo());
-         this.setCategoria(serie.getCategoria());
+        this.setCategoria(serie.getCategoria());
+        
+        if(serie.getDescripcion() != null) {
           this.setDescripcion(serie.getDescripcion());
-        this.setValoracion(serie.getValoracion().toString());
+        } else {
+          this.setDescripcion("");
+        }
+        if(serie.getValoracion() != null) {
+            this.setValoracion(serie.getValoracion().toString());
+        }
     }
     
     
@@ -122,7 +114,13 @@ public class editarSerieManagedBean {
         serie.setTitulo(titulo);
         serie.setCategoria(categoria);
         serie.setDescripcion(descripcion);
+        
+        if(!valoracion.equalsIgnoreCase("vacio")){
         serie.setValoracion(Integer.parseInt(valoracion));
+        } else {
+            serie.setValoracion(null);
+        }
+        //Si es vacío, no la añado
         
         editSerie(serie);
           

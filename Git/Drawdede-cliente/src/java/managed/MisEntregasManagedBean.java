@@ -17,7 +17,6 @@ import ws.Entrega;
 import ws.ParseException_Exception;
 import ws.Serie;
 
-
 @Named(value = "misEntregasManagedBean")
 @RequestScoped
 public class MisEntregasManagedBean {
@@ -27,38 +26,47 @@ public class MisEntregasManagedBean {
 
     private List<Entrega> entregas;
     private String busqueda;
-    private String t1,t2;
+    private String t1, t2;
     private List<Entrega> resultadoBusqueda = null;
-    
+    private boolean refresh = false;
+
+    public boolean isRefresh() {
+        return refresh;
+    }
+
+    public void setRefresh(boolean refresh) {
+        this.refresh = refresh;
+    }
+
     /**
      * Creates a new instance of MisEntregasManagedBean
      */
     public MisEntregasManagedBean() {
     }
 
-    public String navegarEntregas(){
+    public String navegarEntregas() {
         obtenerEntregas();
         return "misEntregas";
     }
-            
+
     private void obtenerEntregas() {
-        entregas= this.findAllEntregas();
+        entregas = this.findAllEntregas();
     }
-    
-    public String buscar(){
-        entregas=this.filtroPorAnotacionEntrega(busqueda);
+
+    public String buscar() {
+        entregas = this.filtroPorAnotacionEntrega(busqueda);
         return "misEntregas";
     }
-    
-    public String filtrarPorPeriodoDeTiempo() throws ParseException_Exception{
-        entregas= this.filtrarEntregaPorPeriodoTiempo(t1, t2);
+
+    public String filtrarPorPeriodoDeTiempo() throws ParseException_Exception {
+        entregas = this.filtrarEntregaPorPeriodoTiempo(t1, t2);
         return "misEntregas";
     }
 
     public List<Entrega> getResultadoBusqueda() {
         return resultadoBusqueda;
     }
-    
+
     public List<Entrega> getEntregas() {
         return entregas;
     }
@@ -94,17 +102,16 @@ public class MisEntregasManagedBean {
     public void setBusqueda(String busqueda) {
         this.busqueda = busqueda;
     }
-    
-    public String entregasAsociadasASerie(int id){
+
+    public String entregasAsociadasASerie(int id) {
         //this.entregas = this.findEntregasConIdSerie(id);
         return "misEntregas";
     }
-    
-    public String getSerieconEntrega(Entrega entrega){
+
+    public String getSerieconEntrega(Entrega entrega) {
         return this.findSerieConEntrega(entrega).getTitulo();
     }
 
-    
     private java.util.List<ws.Entrega> findAllEntregas() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
@@ -140,6 +147,8 @@ public class MisEntregasManagedBean {
         return port.findSerieConEntrega(entrega);
     }
 
-    
-    
+    public void onParameterReceived() {
+        obtenerEntregas();
+    }
+
 }
