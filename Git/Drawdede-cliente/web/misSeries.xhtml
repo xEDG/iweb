@@ -13,7 +13,7 @@
     </h:head>
     <h:body>
 
-        <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create">
+        <div class="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" >
             <p class="plus">+</p>
         </div>
 
@@ -24,19 +24,20 @@
             <h:commandButton class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Worst Serie" action="#{misSeriesManagedBean.worstSerie()}" />
         </h:form>
 
-       
+        <div class="card-columns" style="padding: 10px">
             <ui:repeat  value="#{misSeriesManagedBean.series}" var="serie" rendered="#{!(misSeriesManagedBean.series.size() == 0)}">
-                <div class="card" style="width: 40%; margin: 0 auto; margin-top: 20px">
-                    <div class="card-body">
-                        <h1>#{serie.titulo}</h1>
-                        <h1>#{serie.categoria}</h1>
-                        <h1>#{serie.descripcion}</h1>
-                        <h1>#{serie.valoracion}</h1>
+                <div class="card" style="width: 100%; margin: 0 auto; margin-top: 20px; height: 250px">
+                    <div class="card-body" >
+                        <h1 style="text-align: center">#{serie.titulo}</h1>
+                        <hr/>
+                        <h3>Categoría: #{serie.categoria}</h3>
+                        <h3>Descripción: #{serie.descripcion}</h3>
+                        <h3>Valoración: #{serie.valoracion}</h3>
                     </div>
                 </div>
             </ui:repeat>
+        </div>
 
-        
 
 
         <div style="height:20px"></div>

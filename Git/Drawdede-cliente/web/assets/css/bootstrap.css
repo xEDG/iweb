@@ -2809,14 +2809,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-light {
-  color: #f8f9fa;
+  color: #6effff;
   background-color: transparent;
   background-image: none;
   border-color: #f8f9fa;
 }
 
 .btn-outline-light:hover {
-  color: #212529;
+  color: #6effff;
   background-color: #f8f9fa;
   border-color: #f8f9fa;
 }
@@ -4367,6 +4367,7 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
   color: #fff;
 }
+
 
 .card {
   position: relative;

@@ -46,6 +46,7 @@ public class MisSeriesManagedBean {
 
     private void obtenerSeries() {
         this.series = this.findAllSeries();
+
     }
 
     private java.util.List<ws.Serie> findAllSeries() {
@@ -93,9 +94,7 @@ public class MisSeriesManagedBean {
         this.series.add(this.getWorstValSerie());
         return "misSeries";
     }
-    
-    
-    
+
     public List<Serie> getResultadoBusqueda() {
         return resultadoBusqueda;
     }

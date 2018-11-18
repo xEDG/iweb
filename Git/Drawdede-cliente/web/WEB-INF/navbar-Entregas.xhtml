@@ -15,13 +15,13 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <nav class="navbar navbar-light bg-light" >
-            <a class="navbar-brand">Drawdede</a>
+        <nav class="navbar navbar-dark bg-dark" >
+            <a class="navbar-brand" style="color: #fff">Drawdede</a>
             <h:form class="form-inline">
                 <h:inputText p:class="form-control mr-sm-2" p:type="search" p:placeholder="Busca cualquier entrega" value="#{misEntregasManagedBean.busqueda}" />
-                <h:commandButton class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search" action="#{misEntregasManagedBean.buscar()}" />
-                <h:commandButton action="#{misSeriesManagedBean.navegarSeies()}" class="btn btn-outline-success" style="margin-left:10px" value="Mis Series"/>
-                <h:commandButton action="#{misEntregasManagedBean.navegarEntregas()}" class="btn btn-outline-success" style="margin-left:10px" value="Mis Entregas"/>
+                <h:commandButton class="btn btn-outline-light" type="submit" value="Search" action="#{misEntregasManagedBean.buscar()}" />
+                <h:commandButton action="#{misSeriesManagedBean.navegarSeies()}" class="btn btn-outline-light" style="margin-left:10px" value="Mis Series"/>
+                <h:commandButton action="#{misEntregasManagedBean.navegarEntregas()}" class="btn btn-outline-light" style="margin-left:10px" value="Mis Entregas"/>
             </h:form>
         </nav>
     </body>
