@@ -27,6 +27,15 @@ public class MisSeriesManagedBean {
     private List<Serie> series;
     private String busqueda;
     private List<Serie> resultadoBusqueda = null;
+    boolean refresh = false;
+
+    public boolean isRefresh() {
+        return refresh;
+    }
+
+    public void setRefresh(boolean refresh) {
+        this.refresh = refresh;
+    }
 
     /**
      * Creates a new instance of IndexManagedBean
@@ -120,6 +129,10 @@ public class MisSeriesManagedBean {
         // If the calling of port operations may lead to race condition some synchronization is required.
         ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
         return port.getWorstValSerie();
+    }
+    
+    public void onParameterReceived(){
+        obtenerSeries();
     }
 
 }

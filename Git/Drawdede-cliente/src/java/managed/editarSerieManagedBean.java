@@ -5,7 +5,9 @@
  */
 package managed;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ManagedProperty;
 import javax.inject.Named;
 import javax.xml.ws.WebServiceRef;
 import ws.DrawdedeWebService_Service;
@@ -23,6 +25,22 @@ public class editarSerieManagedBean {
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/Drawdede-war/DrawdedeWebService.wsdl")
     private DrawdedeWebService_Service service;
+    
+    @ManagedProperty(value="#{misSeriesManagedBean}")
+    private MisSeriesManagedBean msmb; // +setter
+    
+    @PostConstruct
+    public void init () {
+        msmb = new MisSeriesManagedBean();
+    }
+
+    public MisSeriesManagedBean getMsmb() {
+        return msmb;
+    }
+
+    public void setMsmb(MisSeriesManagedBean msmb) {
+        this.msmb = msmb;
+    }
 
     private Serie serie;
     
@@ -33,6 +51,7 @@ public class editarSerieManagedBean {
     private String categoria;
     private String descripcion;
     private String valoracion;
+  
 
     public Serie getSerie() {
         return serie;
@@ -96,21 +115,25 @@ public class editarSerieManagedBean {
     
     
     public String editar () {
-        System.out.println("Testing titulo val: " + titulo);
+        System.out.println("PRE TESTING titulo val: " + titulo);
         //System.out.println("Testing s: " + s.getTitulo());
-
+        serie = this.findSerie(id);
         serie.setId(id);
         serie.setTitulo(titulo);
         serie.setCategoria(categoria);
         serie.setDescripcion(descripcion);
         serie.setValoracion(Integer.parseInt(valoracion));
-
-        editSerie(serie);
-
         
-        return "misSeries?faces-redirect=true";
+        editSerie(serie);
+          
+        return "misSeries.jsf?refresh=true";
+        //return "misSeries";
+        //return msmb.navegarSeies();
+        //return "index";         
+        //return "editarSerie.jsf?id=" + serie.getId();
         
     }
+       
     
     
     private void editSerie(ws.Serie entity) {
