@@ -20,22 +20,22 @@
         <ui:include src="/WEB-INF/navbar-Series.xhtml"/>
         <!--La serie tiene un id, titulo, categoria, descripcion y valoracion -->
         
-        <h1> test </h1>
+        <h1> Serie "#{editarSerieManagedBean.id}" </h1>
         
         <h:form>
             
         <!--titulo -->
-        Titulo*: <h:inputText p:type="text" p:class="form-control" id="titulo" binding="#{titulo}" p:placeholder="#{serie.titulo}" value="#{editarSerieManagedBean.titulo}" validatorMessage="La lontigud de la descripción no puede superar los 255 caracteres" >
+        Titulo*: <h:inputText p:type="text" p:class="form-control" id="titulo" binding="#{titulo}" p:placeholder="#{editarSerieManagedBean.titulo}" value="#{editarSerieManagedBean.titulo}" validatorMessage="La lontigud de la descripción no puede superar los 255 caracteres" >
             <f:validateLength minimum="0" maximum="255" />
         </h:inputText> 
         
         <!-- categoria -->
-        Categoria*: <h:inputText p:type="text" p:class="form-control" id="categoria" binding="#{categoria}" p:placeholder="#{serie.categoria}" value="#{editarSerieManagedBean.categoria}" validatorMessage="La lontigud de la descripción no puede superar los 255 caracteres" >
+        Categoria*: <h:inputText p:type="text" p:class="form-control" id="categoria" binding="#{categoria}" p:placeholder="#{editarSerieManagedBean.categoria}" value="#{editarSerieManagedBean.categoria}" validatorMessage="La lontigud de la descripción no puede superar los 255 caracteres" >
             <f:validateLength minimum="0" maximum="255" />
         </h:inputText> 
         
         <!--descripcion -->
-        Descripcion: <h:inputText p:type="text" p:class="form-control" id="descripcion" binding="#{descripcion}" p:placeholder="#{serie.descripcion}" value="#{editarSerieManagedBean.descripcion}" validatorMessage="La lontigud de la descripción no puede superar los 255 caracteres" >
+        Descripcion: <h:inputText p:type="text" p:class="form-control" id="descripcion" binding="#{descripcion}" p:placeholder="#{editarSerieManagedBean.descripcion}" value="#{editarSerieManagedBean.descripcion}" validatorMessage="La lontigud de la descripción no puede superar los 255 caracteres" >
             <f:validateLength minimum="0" maximum="255" />
         </h:inputText> 
         
@@ -57,8 +57,8 @@
         
         <div class="form-group edit-profile-form-group">
                
-                    <button type="submit" class="btn btn-primary btn-raised" jsf:action="#{editarSerieManagedBean.editar()}">Guardar cambios</button>
-                    <a href="misSeries.jsf" class="btn btn-default btn-raised"/>
+            <button type="submit" class="btn btn-primary btn-raised" jsf:action="#{editarSerieManagedBean.editar()}">Guardar cambios</button>
+                   <!-- <a href="misSeries.jsf" class="btn btn-default btn-raised"/>-->
                 
         </div>
         

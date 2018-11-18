@@ -34,6 +34,10 @@ public class editarSerieManagedBean {
     private String descripcion;
     private String valoracion;
 
+    public Serie getSerie() {
+        return serie;
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -84,31 +88,25 @@ public class editarSerieManagedBean {
 
     public void onParameterReceived(){
         this.serie = this.findSerie(id);
+        this.setTitulo(serie.getTitulo());
+         this.setCategoria(serie.getCategoria());
+          this.setDescripcion(serie.getDescripcion());
+        this.setValoracion(serie.getValoracion().toString());
     }
     
     
     public String editar () {
-        boolean hasChanged = false;
-        if (!titulo.equals(serie.getTitulo())) {
-            serie.setTitulo(titulo);
-            hasChanged = true;
-        }
-        if (!categoria.equals(serie.getCategoria())){
-            serie.setCategoria(categoria);
-            hasChanged = true;
-        }
-        if (!descripcion.equals(serie.getDescripcion())) {
-            serie.setDescripcion(descripcion);
-            hasChanged = true;
-        }
-        if(Integer.parseInt(valoracion)!=(serie.getValoracion())) {
-            serie.setValoracion(Integer.parseInt(valoracion));
-            hasChanged = true;
-        }
-        
-        if (hasChanged) {
-            editSerie(serie);
-        }
+        System.out.println("Testing titulo val: " + titulo);
+        //System.out.println("Testing s: " + s.getTitulo());
+
+        serie.setId(id);
+        serie.setTitulo(titulo);
+        serie.setCategoria(categoria);
+        serie.setDescripcion(descripcion);
+        serie.setValoracion(Integer.parseInt(valoracion));
+
+        editSerie(serie);
+
         
         return "misSeries?faces-redirect=true";
         
@@ -128,12 +126,6 @@ public class editarSerieManagedBean {
         ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
         return port.findSerie(id);
     }
-    
-    
-    
-    
-    
-    
     
     
 }
