@@ -12,11 +12,13 @@ and open the template in the editor.
         <title>Mis Series</title>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
         <link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"/>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
         <nav class="navbar navbar-dark bg-dark" >
-            <a class="navbar-brand" style="color: #fff">Drawdede</a>
+            <a class="navbar-brand" style="color: #fff; font-family: 'Pacifico', cursive">Drawdede</a>
             <h:form class="form-inline">
                 <h:inputText p:class="form-control mr-sm-2" p:type="search" p:placeholder="Busca cualquier cómic" value="#{misSeriesManagedBean.busqueda}" />
                 <h:commandButton  class="btn btn-outline-light" type="submit" value="Search" action="#{misSeriesManagedBean.buscar()}" />
