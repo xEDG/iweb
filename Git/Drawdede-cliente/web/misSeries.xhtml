@@ -8,7 +8,7 @@
     
     <f:metadata>
         <f:viewParam name="refresh" value="#{misSeriesManagedBean.refresh}"/>
-        <f:event type="preRenderView" listener="#{misSeriesManagedBean.onParameterReceived()}" />
+        <f:event type="preRenderView" listener="#{misSeriesManagedBean.onParameterReceived(misSeriesManagedBean.refresh)}" />
     </f:metadata>
     
     
