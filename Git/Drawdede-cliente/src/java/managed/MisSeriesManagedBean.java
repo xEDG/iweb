@@ -52,6 +52,7 @@ public class MisSeriesManagedBean {
         obtenerSeries();
         return "misSeries";
     }
+    
 
     private void obtenerSeries() {
         this.series = this.findAllSeries();
@@ -133,6 +134,26 @@ public class MisSeriesManagedBean {
     
     public void onParameterReceived(){
         obtenerSeries();
+    }
+    public String eliminarSerie(Integer id){
+        Serie s = this.findSerie(id);
+        this.removeSerie(s);
+        this.obtenerSeries();
+        return "misSeries";
+    }
+    
+    private void removeSerie(ws.Serie entity) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        port.removeSerie(entity);
+    }
+
+    private Serie findSerie(java.lang.Object id) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        return port.findSerie(id);
     }
 
 }
