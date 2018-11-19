@@ -27,3 +27,6 @@ Git/DrawDD/DrawDD-war/nbproject/jaxws-build.xml
 /Git/DrawDD-cliente/dist/
 /Git/Drawdede/Drawdede-ejb/build/
 /Git/Drawdede/Drawdede-ejb/dist/
+/Git/clienteTest/build/
+/Git/clienteTest/dist/
+/Git/clienteTest/nbproject/private/

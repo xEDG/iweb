@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Test</title>
+    </h:head>
+    <h:body>
+       
+        
+        <h:form>
+            
+        
+        -get all series: <h:commandLink class="btn btn-primary btn-raised" action="#{mainManagedBean.findallseries()}" value="Aceptar" />
+        <br/>
+        -Find serie con id: <h:inputText p:type="text" p:placeholder="id" value="#{mainManagedBean.idSerie}" /> 
+        <h:commandLink class="btn btn-primary btn-raised" action="#{mainManagedBean.getcategoriaseries()}" value="Aceptar" />
+         <br/>
+        -Find serie con titulo: <h:inputText p:type="text" p:placeholder="titulo" value="#{mainManagedBean.titulo}" /> 
+        <br/>
+        -Find entregas con id:<h:inputText p:type="text" p:placeholder="id" value="#{mainManagedBean.idEntrega}" /> 
+        <h:commandLink class="btn btn-primary btn-raised" action="#{mainManagedBean.findentregaconid()}" value="Aceptar" />
+        <br/>
+        -get categorias serie: <h:commandLink class="btn btn-primary btn-raised" action="#{mainManagedBean.getcategoriaseries()}" value="Aceptar" />
+       <br/>
+        -get worst val serie: <h:commandLink class="btn btn-primary btn-raised" action="#{mainManagedBean.getworstvalserie()}" value="Aceptar" />
+        <br/>
+        -get best val serie: <h:commandLink class="btn btn-primary btn-raised" action="#{mainManagedBean.getbestvalserie()}" value="Aceptar" />
+
+       <br/>         
+       -get fecha de entrega not null: <h:commandLink class="btn btn-primary btn-raised" action="#{mainManagedBean.getfechaentreganotnull()}" value="Aceptar" />
+       <br/> 
+       -Filtrar Entrega por periodo de tiempo: <h:inputText p:type="text" p:placeholder="fecha1" value="#{mainManagedBean.fecha1}" /> 
+        <h:inputText p:type="text" p:placeholder="fecha2" value="#{mainManagedBean.fecha2}" /> 
+        <h:commandLink class="btn btn-primary btn-raised" action="#{mainManagedBean.findporperiododetiempo()}" value="Aceptar" />
+       <br/>
+        -filtrar por anotacion: <h:inputText p:type="text" p:placeholder="anotacion" value="#{mainManagedBean.anotacion}" /> 
+        <h:commandLink class="btn btn-primary btn-raised" action="#{mainManagedBean.filtrarporanotacion()}" value="Aceptar" />
+        <br/>
+        -get hulks entregas: <h:commandLink class="btn btn-primary btn-raised" action="#{mainManagedBean.gethulkentregas()}" value="Aceptar" />
+        <br/>
+        
+
+        -Find entregas con id serie:<h:inputText p:type="text" p:placeholder="id" value="#{mainManagedBean.idSerie}" />
+        <h:commandLink class="btn btn-primary btn-raised" action="#{mainManagedBean.findentregaporidSerie()}" value="Aceptar" />
+        <br/>
+        -Find serie con entrega:<h:inputText p:type="text" p:placeholder="id" value="#{mainManagedBean.idEntrega}" />
+        <h:commandLink class="btn btn-primary btn-raised" action="#{mainManagedBean.findserieconentrega()}" value="Aceptar" />
+        </h:form>
+        
+        
+        --------------------------------------------------------------------------------
+        <br/>
+        Resultados de la operacion:
+        
+        <ui:repeat  value="#{mainManagedBean.entregas}" var="e" rendered="#{!(mainManagedBean.entregas.size() == 0)}">
+                <div class="card" style="width: 100%; margin: 0 auto; margin-top: 20px; height: 250px">
+                    <div class="card-body" >
+                        
+                        
+                        <h3>id: #{e.id}</h3>
+                        <h3>anotacion: #{e.anotacion}</h3>
+                        <h3>fechaEntrega: #{e.fechaEntrega}</h3>
+                        
+                        
+                    </div>
+                </div>
+            </ui:repeat>
+        
+        <ui:repeat  value="#{mainManagedBean.series}" var="serie" rendered="#{!(mainManagedBean.series.size() == 0)}">
+                <div class="card" style="width: 100%; margin: 0 auto; margin-top: 20px; height: 250px">
+                    <div class="card-body" >
+                        
+                        <h2>#{serie.id}.-#{serie.titulo}</h2>
+                        <hr/>
+                        <h3>Categoría: #{serie.categoria}</h3>
+                        <h3>Descripción: #{serie.descripcion}</h3>
+                        <h3>Valoración: #{serie.valoracion}</h3>
+                        
+                    </div>
+                </div>
+            </ui:repeat>
+        
+        <ui:repeat  value="#{mainManagedBean.hasEntregas}" var="h" rendered="#{!(mainManagedBean.hasEntregas.size() == 0)}">
+                <div class="card" style="width: 100%; margin: 0 auto; margin-top: 20px; height: 250px">
+                    <div class="card-body" >
+                        
+                        
+                        <h3>id: #{h.id}</h3>
+                        <h3>id entrega: #{h.idEntrega}</h3>
+                        <h3>id serie: #{h.idSerie}</h3>
+                        
+                    </div>
+                </div>
+            </ui:repeat>
+        
+        <ui:repeat  value="#{mainManagedBean.resultados}" var="r" rendered="#{!(mainManagedBean.resultados.size() == 0)}">
+                <div class="card" style="width: 100%; margin: 0 auto; margin-top: 20px; height: 250px">
+                    <div class="card-body" >
+                       
+                        <h3>Resultado: #{r}</h3>
+                       
+                        
+                    </div>
+                </div>
+            </ui:repeat>
+        
+        <ui:repeat  value="#{mainManagedBean.entrega}" var="e" rendered="#{!(mainManagedBean.entrega != null)}">
+                <div class="card" style="width: 100%; margin: 0 auto; margin-top: 20px; height: 250px">
+                    <div class="card-body" >
+                        
+                        
+                        <h3>id: #{e.id}</h3>
+                        <h3>anotacion: #{e.anotacion}</h3>
+                        <h3>fechaEntrega: #{e.fechaEntrega}</h3>
+                        
+                        
+                    </div>
+                </div>
+            </ui:repeat>
+        
+        <ui:repeat  value="#{mainManagedBean.serie}" var="serie" rendered="#{!(mainManagedBean.serie != null)}">
+                <div class="card" style="width: 100%; margin: 0 auto; margin-top: 20px; height: 250px">
+                    <div class="card-body" >
+                        
+                        <h2>#{serie.id}.-#{serie.titulo}</h2>
+                        <hr/>
+                        <h3>Categoría: #{serie.categoria}</h3>
+                        <h3>Descripción: #{serie.descripcion}</h3>
+                        <h3>Valoración: #{serie.valoracion}</h3>
+                        
+                    </div>
+                </div>
+            </ui:repeat>
+        
+        <ui:repeat  value="#{mainManagedBean.hasEntrega}" var="h" rendered="#{!(mainManagedBean.hasEntrega != null)}">
+                <div class="card" style="width: 100%; margin: 0 auto; margin-top: 20px; height: 250px">
+                    <div class="card-body" >
+                        
+                        
+                        <h3>id: #{h.id}</h3>
+                        <h3>id entrega: #{h.idEntrega}</h3>
+                        <h3>id serie: #{h.idSerie}</h3>
+                        
+                    </div>
+                </div>
+            </ui:repeat>
+        
+        <ui:repeat  value="#{mainManagedBean.resultado}" var="r" rendered="#{!(mainManagedBean.resultado != null)}">
+                <div class="card" style="width: 100%; margin: 0 auto; margin-top: 20px; height: 250px">
+                    <div class="card-body" >
+                       
+                        <h3>Categoría: #{r}</h3>
+                       
+                        
+                    </div>
+                </div>
+            </ui:repeat> 
+        
+    </h:body>
+</html>
+
