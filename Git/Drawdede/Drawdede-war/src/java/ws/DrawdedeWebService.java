@@ -79,6 +79,11 @@ public class DrawdedeWebService {
         return ejbRef.findConTitulo(titulo);
     }
     
+    @WebMethod(operationName = "findSerieConId")
+    public Serie findSerieConId(@WebParam(name = "id") int id) {
+        return ejbRef.findSerieConId(id);
+    }
+    
     //////////////////////////////////////////////////////////////////////////////////////7
     
      @EJB

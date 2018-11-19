@@ -54,6 +54,10 @@
 
 <xs:element name="findSerieConEntregaResponse" type="tns:findSerieConEntregaResponse"/>
 
+<xs:element name="findSerieConId" type="tns:findSerieConId"/>
+
+<xs:element name="findSerieConIdResponse" type="tns:findSerieConIdResponse"/>
+
 <xs:element name="findSerieConTitulo" type="tns:findSerieConTitulo"/>
 
 <xs:element name="findSerieConTituloResponse" type="tns:findSerieConTituloResponse"/>
@@ -90,6 +94,28 @@
 
 <xs:element name="serie" type="tns:serie"/>
 
+<xs:complexType name="findSerieConId">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findSerieConIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:serie" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="serie">
+<xs:sequence>
+<xs:element name="categoria" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+<xs:element name="valoracion" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="removeEntrega">
 <xs:sequence>
 <xs:element name="entity" type="tns:entrega" minOccurs="0"/>
@@ -123,16 +149,6 @@
 <xs:complexType name="findSerieResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:serie" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="serie">
-<xs:sequence>
-<xs:element name="categoria" type="xs:string" minOccurs="0"/>
-<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
-<xs:element name="id" type="xs:int" minOccurs="0"/>
-<xs:element name="titulo" type="xs:string" minOccurs="0"/>
-<xs:element name="valoracion" type="xs:int" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -304,18 +320,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="findEntrega">
-<xs:sequence>
-<xs:element name="id" type="xs:anyType" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="findEntregaResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:entrega" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="getBestValSerie">
 <xs:sequence/>
 </xs:complexType>
@@ -338,9 +342,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="createHasEntrega">
+<xs:complexType name="findEntrega">
 <xs:sequence>
-<xs:element name="entity" type="tns:hasEntrega" minOccurs="0"/>
+<xs:element name="id" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findEntregaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:entrega" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -351,6 +361,12 @@
 <xs:complexType name="findAllHasEntregasResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:hasEntrega" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createHasEntrega">
+<xs:sequence>
+<xs:element name="entity" type="tns:hasEntrega" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

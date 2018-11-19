@@ -53,11 +53,9 @@ public class MisSeriesManagedBean {
         obtenerSeries();
         return "misSeries";
     }
-    
 
     private void obtenerSeries() {
         this.series = this.findAllSeries();
-
     }
 
     private java.util.List<ws.Serie> findAllSeries() {
@@ -132,29 +130,32 @@ public class MisSeriesManagedBean {
         ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
         return port.getWorstValSerie();
     }
-    
-    public void onParameterReceived(Integer r){
-       // En progreso, Edu.
+
+    public void onParameterReceived(int r) {
+        // En progreso, Edu.
         System.out.println("WAKI Hola en series he recibido un parametro BIENN");
-        if (r > 0) {
+        if (r == 1) {
             System.out.println("WAKI HE ENTRADO EN EL IF DE PARAMETER");
             obtenerSeries();
-           // this.refresh = false;
+            // this.refresh = false;
+        } else if (r > 1) {
+            this.removeSerie(this.findSerieConId(r));
+            obtenerSeries();
         } else {
             System.out.println("WAKI Soy menor que cero sorry xd serie");
-    
+
         }
         // ...
-        
+
     }
-    
-    public String eliminarSerie(Integer id){
+
+    public String eliminarSerie(Integer id) {
         Serie s = this.findSerie(id);
         this.removeSerie(s);
         this.obtenerSeries();
         return "misSeries";
     }
-    
+
     private void removeSerie(ws.Serie entity) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
@@ -167,6 +168,13 @@ public class MisSeriesManagedBean {
         // If the calling of port operations may lead to race condition some synchronization is required.
         ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
         return port.findSerie(id);
+    }
+
+    private Serie findSerieConId(int id) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        return port.findSerieConId(id);
     }
 
 }

@@ -71,6 +71,13 @@ public class SerieFacade extends AbstractFacade<Serie> {
         return result;
     }
     
+    public Serie findSerieConId(int id){
+        Query q;
+        q = this.em.createQuery("SELECT s FROM Serie s WHERE s.id = :clave");
+        q.setParameter("clave", id);
+        return (Serie) q.getSingleResult();
+    }
+    
     public List<Serie> getAll(){
         Query q;
         q = this.em.createNamedQuery("SELECT s FROM Serie s");
