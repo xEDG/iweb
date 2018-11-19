@@ -164,24 +164,26 @@ public class MisEntregasManagedBean {
     }
     
     public String eliminarEntrega(Integer id){
-        Entrega e = this.findEntrega(id);
+        Entrega e = this.findEntregaConId(id);
         this.removeEntrega(e);
         obtenerEntregas();
         return "misEntregas";
     }
 
-    private Entrega findEntrega(java.lang.Object id) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
-        return port.findEntrega(id);
-    }
+    
 
     private void removeEntrega(ws.Entrega entity) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
         port.removeEntrega(entity);
+    }
+
+    private Entrega findEntregaConId(int id) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        return port.findEntregaConId(id);
     }
 
 }

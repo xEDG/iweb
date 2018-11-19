@@ -36,9 +36,9 @@
 
 <xs:element name="findAllSeriesResponse" type="tns:findAllSeriesResponse"/>
 
-<xs:element name="findEntrega" type="tns:findEntrega"/>
+<xs:element name="findEntregaConId" type="tns:findEntregaConId"/>
 
-<xs:element name="findEntregaResponse" type="tns:findEntregaResponse"/>
+<xs:element name="findEntregaConIdResponse" type="tns:findEntregaConIdResponse"/>
 
 <xs:element name="findEntregasConIdSerie" type="tns:findEntregasConIdSerie"/>
 
@@ -250,6 +250,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="findEntregaConId">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findEntregaConIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:entrega" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="findEntregasConIdSerie">
 <xs:sequence>
 <xs:element name="id" type="xs:int"/>
@@ -339,18 +351,6 @@
 <xs:complexType name="findHasEntregaResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:hasEntrega" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="findEntrega">
-<xs:sequence>
-<xs:element name="id" type="xs:anyType" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="findEntregaResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:entrega" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

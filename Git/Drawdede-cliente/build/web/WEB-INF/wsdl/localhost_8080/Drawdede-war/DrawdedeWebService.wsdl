@@ -55,6 +55,12 @@
 <message name="findAllHasEntregasResponse">
 <part name="parameters" element="tns:findAllHasEntregasResponse"/>
 </message>
+<message name="findEntregaConId">
+<part name="parameters" element="tns:findEntregaConId"/>
+</message>
+<message name="findEntregaConIdResponse">
+<part name="parameters" element="tns:findEntregaConIdResponse"/>
+</message>
 <message name="getWorstValSerie">
 <part name="parameters" element="tns:getWorstValSerie"/>
 </message>
@@ -127,12 +133,6 @@
 <message name="createHasEntrega">
 <part name="parameters" element="tns:createHasEntrega"/>
 </message>
-<message name="findEntrega">
-<part name="parameters" element="tns:findEntrega"/>
-</message>
-<message name="findEntregaResponse">
-<part name="parameters" element="tns:findEntregaResponse"/>
-</message>
 <message name="editSerie">
 <part name="parameters" element="tns:editSerie"/>
 </message>
@@ -169,6 +169,10 @@
 <operation name="findAllHasEntregas">
 <input wsam:Action="http://ws/DrawdedeWebService/findAllHasEntregasRequest" message="tns:findAllHasEntregas"/>
 <output wsam:Action="http://ws/DrawdedeWebService/findAllHasEntregasResponse" message="tns:findAllHasEntregasResponse"/>
+</operation>
+<operation name="findEntregaConId">
+<input wsam:Action="http://ws/DrawdedeWebService/findEntregaConIdRequest" message="tns:findEntregaConId"/>
+<output wsam:Action="http://ws/DrawdedeWebService/findEntregaConIdResponse" message="tns:findEntregaConIdResponse"/>
 </operation>
 <operation name="getWorstValSerie">
 <input wsam:Action="http://ws/DrawdedeWebService/getWorstValSerieRequest" message="tns:getWorstValSerie"/>
@@ -225,10 +229,6 @@
 </operation>
 <operation name="createHasEntrega">
 <input wsam:Action="http://ws/DrawdedeWebService/createHasEntrega" message="tns:createHasEntrega"/>
-</operation>
-<operation name="findEntrega">
-<input wsam:Action="http://ws/DrawdedeWebService/findEntregaRequest" message="tns:findEntrega"/>
-<output wsam:Action="http://ws/DrawdedeWebService/findEntregaResponse" message="tns:findEntregaResponse"/>
 </operation>
 <operation name="editSerie">
 <input wsam:Action="http://ws/DrawdedeWebService/editSerie" message="tns:editSerie"/>
@@ -311,6 +311,15 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="findEntregaConId">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="getWorstValSerie">
 <soap:operation soapAction=""/>
 <input>
@@ -430,15 +439,6 @@
 <input>
 <soap:body use="literal"/>
 </input>
-</operation>
-<operation name="findEntrega">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
 </operation>
 <operation name="editSerie">
 <soap:operation soapAction=""/>

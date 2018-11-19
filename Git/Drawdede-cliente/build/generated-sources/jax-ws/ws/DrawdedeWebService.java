@@ -148,6 +148,21 @@ public interface DrawdedeWebService {
 
     /**
      * 
+     * @param id
+     * @return
+     *     returns ws.Entrega
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findEntregaConId", targetNamespace = "http://ws/", className = "ws.FindEntregaConId")
+    @ResponseWrapper(localName = "findEntregaConIdResponse", targetNamespace = "http://ws/", className = "ws.FindEntregaConIdResponse")
+    @Action(input = "http://ws/DrawdedeWebService/findEntregaConIdRequest", output = "http://ws/DrawdedeWebService/findEntregaConIdResponse")
+    public Entrega findEntregaConId(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
      * @return
      *     returns ws.Serie
      */
@@ -346,21 +361,6 @@ public interface DrawdedeWebService {
     public void createHasEntrega(
         @WebParam(name = "entity", targetNamespace = "")
         HasEntrega entity);
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns ws.Entrega
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findEntrega", targetNamespace = "http://ws/", className = "ws.FindEntrega")
-    @ResponseWrapper(localName = "findEntregaResponse", targetNamespace = "http://ws/", className = "ws.FindEntregaResponse")
-    @Action(input = "http://ws/DrawdedeWebService/findEntregaRequest", output = "http://ws/DrawdedeWebService/findEntregaResponse")
-    public Entrega findEntrega(
-        @WebParam(name = "id", targetNamespace = "")
-        Object id);
 
     /**
      * 

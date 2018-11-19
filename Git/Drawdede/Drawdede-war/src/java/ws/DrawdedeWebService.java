@@ -108,8 +108,8 @@ public class DrawdedeWebService {
         ejbEntregaRef.remove(entity);
     }
 
-    @WebMethod(operationName = "findEntrega")
-    public Entrega findEntrega(@WebParam(name = "id") Object id) {
+    @WebMethod(operationName = "findEntregaConId")
+    public Entrega findEntregaConId(@WebParam(name = "id") int id) {
         return ejbEntregaRef.find(id);
     }
 

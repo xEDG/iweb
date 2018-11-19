@@ -73,7 +73,7 @@ public class editarEntregaManagedBean {
     }
     
     public void onParameterReceived() {
-        this.entrega = this.findEntrega(id);
+        this.entrega = this.findEntregaConId(id);
         
         if (entrega.getAnotacion() != null) {
             this.setAnotacion(entrega.getAnotacion());
@@ -91,7 +91,7 @@ public class editarEntregaManagedBean {
     
     public String editar() throws DatatypeConfigurationException {
         
-        entrega = this.findEntrega(id);
+        entrega = this.findEntregaConId(id);
         entrega.setId(id);
         entrega.setAnotacion(anotacion);
         /*String pattern = "yyyy-MM-dd";
@@ -118,12 +118,6 @@ public class editarEntregaManagedBean {
         
     }
     
-    private Entrega findEntrega(java.lang.Object id) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
-        return port.findEntrega(id);
-    }
     
     private void editEntrega(ws.Entrega entity) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
@@ -148,5 +142,14 @@ public class editarEntregaManagedBean {
         
         return cal;
     }
+
+    private Entrega findEntregaConId(int id) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        return port.findEntregaConId(id);
+    }
+
+    
     
 }

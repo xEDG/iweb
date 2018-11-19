@@ -34,7 +34,15 @@ public class EntregaFacade extends AbstractFacade<Entrega> {
     public EntregaFacade() {
         super(Entrega.class);
     }
-    
+
+    public Entrega findEntregaConId(int id) {
+        Query q;
+        q = this.em.createQuery("SELECT e FROM Entrega e WHERE e.id = :clave");
+        q.setParameter("clave",id);
+        return (Entrega) q.getSingleResult();
+
+    }
+
     public List<String> getHulks() {
         Query q;
         q = this.em.createQuery("SELECT e.anotacion FROM Entrega e WHERE UPPER(e.anotacion) LIKE UPPER('%hulk%')");
@@ -66,7 +74,6 @@ public class EntregaFacade extends AbstractFacade<Entrega> {
 
         //No debemos usar Between porque compara de izquierda a derecha, si el año es igual no lo mira
         //Fuente https://stackoverflow.com/questions/5125076/sql-query-to-select-dates-between-two-dates
-        
         Query q = this.em.createQuery("select e from Entrega e where e.fechaEntrega >= :d1 AND e.fechaEntrega <= :d2");
 
         q.setParameter("d1", date1);
