@@ -124,11 +124,11 @@ public class editarSerieManagedBean {
         
         editSerie(serie);
           
-        return "misSeries.jsf?refresh=1";
+        //return "misSeries.jsf?refresh=1";
         //return "misSeries";
         //return msmb.navegarSeies();
         //return "index";         
-        //return "editarSerie.jsf?id=" + serie.getId();
+        return "editarSerie.jsf?id=" + serie.getId();
         
     }
        

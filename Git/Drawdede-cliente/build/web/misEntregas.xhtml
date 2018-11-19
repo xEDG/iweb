@@ -44,9 +44,7 @@ and open the template in the editor.
                         <h3>Id: #{entrega.id}</h3>
                         <h3>Serie: #{misEntregasManagedBean.getSerieconEntrega(entrega)}</h3>
                         <a href="editarEntrega.jsf?id=#{entrega.id}"> Editar </a>
-                         <h:form>
-                             <h:commandButton class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Delete" action="#{misEntregasManagedBean.eliminarEntrega(entrega.id)}" />
-                        </h:form>
+                        <a href="misEntregas.jsf?refresh=#{entrega.id}"> Eliminar </a>
                     </div>
                 </div>
             </ui:repeat>
