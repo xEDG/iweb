@@ -14,7 +14,7 @@ and open the template in the editor.
 
     <f:metadata>
         <f:viewParam name="refresh" value="#{misEntregasManagedBean.refresh}"/>
-        <f:event type="preRenderView" listener="#{misEntregasManagedBean.onParameterReceived()}" />
+        <f:event type="preRenderView" listener="#{misEntregasManagedBean.onParameterReceived(misEntregasManagedBean.refresh)}" />
     </f:metadata>
 
     <h:head>
