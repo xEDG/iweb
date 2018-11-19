@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
-    <service name="DrawdedeWebService">
-      <implementation-class>ws.DrawdedeWebService</implementation-class>
-    </service>
     <service name="SerieWebService">
       <implementation-class>soapws.SerieWebService</implementation-class>
     </service>
@@ -12,6 +9,9 @@
     </service>
     <service name="HasEntregaWebService">
       <implementation-class>soapws.HasEntregaWebService</implementation-class>
+    </service>
+    <service name="DrawdedeWebService">
+      <implementation-class>ws.DrawdedeWebService</implementation-class>
     </service>
   </services>
   <clients/>
