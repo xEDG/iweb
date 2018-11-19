@@ -39,6 +39,9 @@
                         <h3>Descripción: #{serie.descripcion}</h3>
                         <h3>Valoración: #{serie.valoracion}</h3>
                         <a href="editarSerie.jsf?id=#{serie.id}"> Editar </a>
+                        <h:form>
+                            <h:commandButton class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Delete" action="#{misSeriesManagedBean.eliminarSerie(serie.id)}" />
+                        </h:form>
                     </div>
                 </div>
             </ui:repeat>

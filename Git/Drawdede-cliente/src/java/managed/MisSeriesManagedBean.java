@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.xml.ws.WebServiceRef;
 import ws.DrawdedeWebService_Service;
 import ws.Serie;
@@ -27,13 +28,13 @@ public class MisSeriesManagedBean {
     private List<Serie> series;
     private String busqueda;
     private List<Serie> resultadoBusqueda = null;
-    boolean refresh = false;
+    private Integer refresh = 0;
 
-    public boolean isRefresh() {
+    public Integer getRefresh() {
         return refresh;
     }
 
-    public void setRefresh(boolean refresh) {
+    public void setRefresh(Integer refresh) {
         this.refresh = refresh;
     }
 
@@ -132,9 +133,21 @@ public class MisSeriesManagedBean {
         return port.getWorstValSerie();
     }
     
-    public void onParameterReceived(){
-        obtenerSeries();
+    public void onParameterReceived(Integer r){
+       // En progreso, Edu.
+        System.out.println("WAKI Hola en series he recibido un parametro BIENN");
+        if (r > 0) {
+            System.out.println("WAKI HE ENTRADO EN EL IF DE PARAMETER");
+            obtenerSeries();
+           // this.refresh = false;
+        } else {
+            System.out.println("WAKI Soy menor que cero sorry xd serie");
+    
+        }
+        // ...
+        
     }
+    
     public String eliminarSerie(Integer id){
         Serie s = this.findSerie(id);
         this.removeSerie(s);

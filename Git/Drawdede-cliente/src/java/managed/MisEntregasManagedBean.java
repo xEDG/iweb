@@ -11,6 +11,7 @@ import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.xml.ws.WebServiceRef;
 import ws.DrawdedeWebService_Service;
 import ws.Entrega;
@@ -28,13 +29,13 @@ public class MisEntregasManagedBean {
     private String busqueda;
     private String t1, t2;
     private List<Entrega> resultadoBusqueda = null;
-    private boolean refresh = false;
+    private Integer refresh = 0;
 
-    public boolean isRefresh() {
+    public Integer getRefresh() {
         return refresh;
     }
 
-    public void setRefresh(boolean refresh) {
+    public void setRefresh(Integer refresh) {
         this.refresh = refresh;
     }
 
@@ -147,8 +148,19 @@ public class MisEntregasManagedBean {
         return port.findSerieConEntrega(entrega);
     }
 
-    public void onParameterReceived() {
-        obtenerEntregas();
+    
+    public void onParameterReceived(Integer r){
+        // En progreso, Edu.
+        System.out.println("WAKI Hola en entregas he recibido un parametro BIENN");
+        if (r > 0) {
+            System.out.println("WAKI HE ENTRADO EN EL IF DE PARAMETER");
+            obtenerEntregas();
+           // this.refresh = false;
+        } else {
+            System.out.println("WAKI Soy menor qe cero sorry xd entrega");
+    
+        }
+        
     }
     
     public String eliminarEntrega(Integer id){

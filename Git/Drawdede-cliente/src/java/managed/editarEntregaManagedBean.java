@@ -110,7 +110,7 @@ public class editarEntregaManagedBean {
         
         editEntrega(entrega);
         
-        return "misEntregas.jsf?refresh=true";
+        return "misEntregas.jsf?refresh=1";
         //return "misSeries";
         //return msmb.navegarSeies();
         //return "index";         
