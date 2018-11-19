@@ -157,7 +157,7 @@ public class MisEntregasManagedBean {
             obtenerEntregas();
            // this.refresh = false;
         } else if (r > 1) {
-            this.removeEntrega(this.findEntregaConId(r));
+            this.eliminarEntrega(r);
             obtenerEntregas();
         } else {
             System.out.println("WAKI Soy menor qe cero sorry xd entrega");
@@ -166,11 +166,12 @@ public class MisEntregasManagedBean {
         
     }
     
-    public String eliminarEntrega(Integer id){
+    public void eliminarEntrega(Integer id){
+        
         Entrega e = this.findEntregaConId(id);
+        
         this.removeEntrega(e);
-        obtenerEntregas();
-        return "misEntregas";
+       
     }
 
     
@@ -188,5 +189,21 @@ public class MisEntregasManagedBean {
         ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
         return port.findEntregaConId(id);
     }
+
+    private void removeSerie(ws.Serie entity) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        port.removeSerie(entity);
+    }
+
+    private java.util.List<ws.Entrega> findEntregasConIdSerie_1(int id) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        return port.findEntregasConIdSerie(id);
+    }
+
+   
 
 }

@@ -5,13 +5,16 @@
  */
 package managed;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
 import javax.xml.ws.WebServiceRef;
 import ws.DrawdedeWebService_Service;
+import ws.Entrega;
 import ws.Serie;
 
 /**
@@ -20,7 +23,7 @@ import ws.Serie;
  */
 @Named(value = "misSeriesManagedBean")
 @RequestScoped
-public class MisSeriesManagedBean {
+public class MisSeriesManagedBean implements Serializable {
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/Drawdede-war/DrawdedeWebService.wsdl")
     private DrawdedeWebService_Service service;
@@ -29,6 +32,18 @@ public class MisSeriesManagedBean {
     private String busqueda;
     private List<Serie> resultadoBusqueda = null;
     private Integer refresh = 0;
+    private int eliminate = 0;
+
+    
+    
+    public int getEliminate() {
+        return eliminate;
+    }
+
+    public void setEliminate(int eliminate) {
+        this.eliminate = eliminate;
+    }
+    
 
     public Integer getRefresh() {
         return refresh;
@@ -131,30 +146,31 @@ public class MisSeriesManagedBean {
         return port.getWorstValSerie();
     }
 
-    public void onParameterReceived(int r) {
+    public void onParameterReceived() {
         // En progreso, Edu.
+			if(this.eliminate != 0){
+				List<Entrega> entregasEliminar = this.findEntregasConIdSerie(eliminate);
+				for(Entrega e : entregasEliminar){
+					this.removeEntrega(e);
+				}
+				this.removeSerie(this.findSerieConId(eliminate));
+				obtenerSeries();
+				this.eliminate = 0;
+			}
         System.out.println("WAKI Hola en series he recibido un parametro BIENN");
-        if (r == 1) {
+        if (this.refresh == 1) {
             System.out.println("WAKI HE ENTRADO EN EL IF DE PARAMETER");
             obtenerSeries();
             // this.refresh = false;
-        } else if (r > 1) {
-            this.removeSerie(this.findSerieConId(r));
-            obtenerSeries();
         } else {
             System.out.println("WAKI Soy menor que cero sorry xd serie");
 
         }
+        
         // ...
 
     }
 
-    public String eliminarSerie(Integer id) {
-        Serie s = this.findSerie(id);
-        this.removeSerie(s);
-        this.obtenerSeries();
-        return "misSeries";
-    }
 
     private void removeSerie(ws.Serie entity) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
@@ -175,6 +191,21 @@ public class MisSeriesManagedBean {
         // If the calling of port operations may lead to race condition some synchronization is required.
         ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
         return port.findSerieConId(id);
+    }
+
+
+    private java.util.List<ws.Entrega> findEntregasConIdSerie(int id) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        return port.findEntregasConIdSerie(id);
+    }
+
+    private void removeEntrega(ws.Entrega entity) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        ws.DrawdedeWebService port = service.getDrawdedeWebServicePort();
+        port.removeEntrega(entity);
     }
 
 }

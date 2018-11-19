@@ -8,7 +8,8 @@
 
     <f:metadata>
         <f:viewParam name="refresh" value="#{misSeriesManagedBean.refresh}"/>
-        <f:event type="preRenderView" listener="#{misSeriesManagedBean.onParameterReceived(misSeriesManagedBean.refresh)}" />
+        <f:viewParam name="eliminate" value="#{misSeriesManagedBean.eliminate}"/>
+        <f:event type="preRenderView" listener="#{misSeriesManagedBean.onParameterReceived()}" />
     </f:metadata>
 
 
@@ -41,7 +42,7 @@
                         <h3>Descripción: #{serie.descripcion}</h3>
                         <h3>Valoración: #{serie.valoracion}</h3>
                         <a href="editarSerie.jsf?id=#{serie.id}"> Editar </a>
-                        <a href="misSeries.jsf?refresh=#{serie.id}"> Eliminar </a>
+                        <a href="misSeries.jsf?eliminate=#{serie.id}"> Eliminar </a>
                     </div>
                 </div>
             </ui:repeat>
@@ -51,7 +52,7 @@
 
         <div style="height:20px"></div>
         <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create">
-            <p class="plus">+</p>
+            <a class="plus" href="crearSerie.jsf">+</a>
         </div>
     </h:body>
 </html>
