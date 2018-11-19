@@ -8,5 +8,19 @@
             <file>file:/C:/Users/Rodrii/Documents/GitHub/iweb/Git/Drawdede-cliente/web/misEntregas.xhtml</file>
             <file>file:/C:/Users/Rodrii/Documents/GitHub/iweb/Git/Drawdede-cliente/web/misSeries.xhtml</file>
         </group>
+        <group name="NEW">
+            <file>file:/C:/Users/user/Desktop/Ingeniería%20del%20Software/2018-2019/Ingeniería%20Web/iwebTwo/iweb/Git/Drawdede-cliente/src/java/managed/MisSeriesManagedBean.java</file>
+            <file>file:/C:/Users/user/Desktop/Ingeniería%20del%20Software/2018-2019/Ingeniería%20Web/iwebTwo/iweb/Git/Drawdede-cliente/src/java/managed/entregaSerieManagedBean.java</file>
+            <file>file:/C:/Users/user/Desktop/Ingeniería%20del%20Software/2018-2019/Ingeniería%20Web/iwebTwo/iweb/Git/Drawdede-cliente/web/entregasSerie.xhtml</file>
+            <file>file:/C:/Users/user/Desktop/Ingeniería%20del%20Software/2018-2019/Ingeniería%20Web/iwebTwo/iweb/Git/Drawdede-cliente/web/editarEntrega.xhtml</file>
+            <file>file:/C:/Users/user/Desktop/Ingeniería%20del%20Software/2018-2019/Ingeniería%20Web/iwebTwo/iweb/Git/Drawdede-cliente/src/java/managed/editarEntregaManagedBean.java</file>
+            <file>file:/C:/Users/user/Desktop/Ingeniería%20del%20Software/2018-2019/Ingeniería%20Web/iwebTwo/iweb/Git/Drawdede-cliente/web/WEB-INF/navbar-Entregas.xhtml</file>
+            <file>file:/C:/Users/user/Desktop/Ingeniería%20del%20Software/2018-2019/Ingeniería%20Web/iwebTwo/iweb/Git/Drawdede-cliente/web/misSeries.xhtml</file>
+            <file>file:/C:/Users/user/Desktop/Ingeniería%20del%20Software/2018-2019/Ingeniería%20Web/iwebTwo/iweb/Git/Drawdede-cliente/web/WEB-INF/navbar-Series.xhtml</file>
+            <file>file:/C:/Users/user/Desktop/Ingeniería%20del%20Software/2018-2019/Ingeniería%20Web/iwebTwo/iweb/Git/Drawdede-cliente/web/misEntregas.xhtml</file>
+            <file>file:/C:/Users/user/Desktop/Ingeniería%20del%20Software/2018-2019/Ingeniería%20Web/iwebTwo/iweb/Git/Drawdede-cliente/src/java/managed/editarSerieManagedBean.java</file>
+            <file>file:/C:/Users/user/Desktop/Ingeniería%20del%20Software/2018-2019/Ingeniería%20Web/iwebTwo/iweb/Git/Drawdede-cliente/web/editarSerie.xhtml</file>
+            <file>file:/C:/Users/user/Desktop/Ingeniería%20del%20Software/2018-2019/Ingeniería%20Web/iwebTwo/iweb/Git/Drawdede-cliente/src/java/managed/MisEntregasManagedBean.java</file>
+        </group>
     </open-files>
 </project-private>

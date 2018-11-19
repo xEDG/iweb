@@ -152,10 +152,13 @@ public class MisEntregasManagedBean {
     public void onParameterReceived(Integer r){
         // En progreso, Edu.
         System.out.println("WAKI Hola en entregas he recibido un parametro BIENN");
-        if (r > 0) {
+        if (r == 1) {
             System.out.println("WAKI HE ENTRADO EN EL IF DE PARAMETER");
             obtenerEntregas();
            // this.refresh = false;
+        } else if (r > 1) {
+            this.removeEntrega(this.findEntregaConId(r));
+            obtenerEntregas();
         } else {
             System.out.println("WAKI Soy menor qe cero sorry xd entrega");
     
