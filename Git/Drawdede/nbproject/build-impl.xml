@@ -14,7 +14,7 @@ is divided into following sections:
   - cleanup
 
 -->
-<project xmlns:ear2="http://www.netbeans.org/ns/j2ee-earproject/2" basedir=".." default="default" name="Drawdede-impl">
+<project xmlns:ear2="http://www.netbeans.org/ns/j2ee-earproject/2" basedir=".." default="default" name="B6servidorSOA-impl">
     <import file="ant-deploy.xml"/>
     <fail message="Please build using Ant 1.7.1 or higher.">
         <condition>
@@ -407,17 +407,17 @@ exists or setup the property manually. For example like this:
         <ear2:run-appclient subprojectname="${app.client}"/>
     </target>
     <target if="j2ee.appclient.mainclass.args" name="-as-retrieve-option-workaround" unless="j2ee.clientName">
-        <property name="client.jar" value="${dist.dir}/DrawdedeClient.jar"/>
+        <property name="client.jar" value="${dist.dir}/B6servidorSOAClient.jar"/>
         <sleep seconds="3"/>
-        <copy failonerror="false" file="${wa.copy.client.jar.from}/Drawdede/DrawdedeClient.jar" todir="${dist.dir}"/>
+        <copy failonerror="false" file="${wa.copy.client.jar.from}/B6servidorSOA/B6servidorSOAClient.jar" todir="${dist.dir}"/>
         <copy failonerror="false" flatten="true" todir="${dist.dir}/">
-            <fileset dir="${wa.copy.client.jar.from}/Drawdede" includes="**/DrawdedeClient.jar"/>
+            <fileset dir="${wa.copy.client.jar.from}/B6servidorSOA" includes="**/B6servidorSOAClient.jar"/>
         </copy>
-        <copy flatten="true" todir="${dist.dir}/DrawdedeClient">
-            <fileset dir="${wa.copy.client.jar.from}/Drawdede" includes="**/*.*ar"/>
+        <copy flatten="true" todir="${dist.dir}/B6servidorSOAClient">
+            <fileset dir="${wa.copy.client.jar.from}/B6servidorSOA" includes="**/*.*ar"/>
         </copy>
-        <copy failonerror="false" flatten="false" todir="${dist.dir}/DrawdedeClient">
-            <fileset dir="${dist.dir}/gfdeploy/Drawdede" includes="**/*.jar"/>
+        <copy failonerror="false" flatten="false" todir="${dist.dir}/B6servidorSOAClient">
+            <fileset dir="${dist.dir}/gfdeploy/B6servidorSOA" includes="**/*.jar"/>
         </copy>
     </target>
     <target depends="init" name="-init-run-macros">

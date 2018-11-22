@@ -30,6 +30,15 @@ public class MisEntregasManagedBean {
     private String t1, t2;
     private List<Entrega> resultadoBusqueda = null;
     private Integer refresh = 0;
+    private int eliminate = 0;
+
+    public int getEliminate() {
+        return eliminate;
+    }
+
+    public void setEliminate(int eliminate) {
+        this.eliminate = eliminate;
+    }
 
     public Integer getRefresh() {
         return refresh;
@@ -149,30 +158,22 @@ public class MisEntregasManagedBean {
     }
 
     
-    public void onParameterReceived(Integer r){
+    public void onParameterReceived(){
         // En progreso, Edu.
-        System.out.println("WAKI Hola en entregas he recibido un parametro BIENN");
-        if (r == 1) {
-            System.out.println("WAKI HE ENTRADO EN EL IF DE PARAMETER");
-            obtenerEntregas();
-           // this.refresh = false;
-        } else if (r > 1) {
-            this.eliminarEntrega(r);
-            obtenerEntregas();
-        } else {
-            System.out.println("WAKI Soy menor qe cero sorry xd entrega");
-    
-        }
+        
+        
+        
+        
+                     if(this.eliminate != 0){
+                         Entrega e = this.findEntregaConId(eliminate);
+				this.removeEntrega(e);
+				obtenerEntregas();
+				this.eliminate = 0;
+			}
         
     }
     
-    public void eliminarEntrega(Integer id){
-        
-        Entrega e = this.findEntregaConId(id);
-        
-        this.removeEntrega(e);
-       
-    }
+   
 
     
 
