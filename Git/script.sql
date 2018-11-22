@@ -38,7 +38,6 @@ CREATE TABLE `entrega` (
 
 LOCK TABLES `entrega` WRITE;
 /*!40000 ALTER TABLE `entrega` DISABLE KEYS */;
-INSERT INTO `entrega` VALUES (1,'Traje rojo spiderman','1996-09-17'),(2,'Hulk menos fuerte',NULL),(3,'Hulk azul',NULL),(4,'Principes disney','2006-10-10');
 /*!40000 ALTER TABLE `entrega` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,7 +66,6 @@ CREATE TABLE `has_entrega` (
 
 LOCK TABLES `has_entrega` WRITE;
 /*!40000 ALTER TABLE `has_entrega` DISABLE KEYS */;
-INSERT INTO `has_entrega` VALUES (1,1,1),(2,2,2),(3,2,3),(4,3,4);
 /*!40000 ALTER TABLE `has_entrega` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +92,6 @@ CREATE TABLE `serie` (
 
 LOCK TABLES `serie` WRITE;
 /*!40000 ALTER TABLE `serie` DISABLE KEYS */;
-INSERT INTO `serie` VALUES (1,'Spiderman','Accion','Bicho malo',3),(2,'Hulk','Verde','Mu fuerte',8),(3,'Princesas Disney','Terror',NULL,NULL);
 /*!40000 ALTER TABLE `serie` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -107,11 +104,37 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+
+INSERT INTO `iweb`.`serie` (`id`, `titulo`, `categoria`, `descripcion`, `valoracion`) VALUES ('2', 'Hulk', 'Acción', '¿Será capaz Hulk de hacer frente a Loki?', '7');
+INSERT INTO `iweb`.`serie` (`id`, `titulo`, `categoria`, `descripcion`, `valoracion`) VALUES ('3', 'TinTin', 'Aventuras', 'TinTin se adentrará en la base espacial de la URSS', '7');
+INSERT INTO `iweb`.`serie` (`id`, `titulo`, `categoria`, `descripcion`, `valoracion`) VALUES ('4', 'Batman', 'Acción', 'El Caballero Oscuro ha vuelto', '10');
+INSERT INTO `iweb`.`serie` (`id`, `titulo`, `categoria`, `descripcion`, `valoracion`) VALUES ('5', 'Oliver y Benji', 'Deportes', '¿Meterán gol por fin?', '3');
+
+INSERT INTO `iweb`.`serie` (`id`, `titulo`, `categoria`, `descripcion`, `valoracion`) VALUES ('1', 'Spiderman', 'Acción', 'El hombre que araña', '7');
+
+INSERT INTO `iweb`.`serie` (`id`, `titulo`, `categoria`, `descripcion`, `valoracion`) VALUES ('6', 'Deadpool', 'Antihéroes', 'El antihéroe más enfermo de todos', '8');
+INSERT INTO `iweb`.`serie` (`id`, `titulo`, `categoria`, `descripcion`, `valoracion`) VALUES ('7', 'Mortadelo y Filemón', 'Comedia', 'La T.I.A está corrupta', '5');
+
+
+
+
+INSERT INTO `iweb`.`entrega` (`id`, `anotacion`, `fecha_entrega`) VALUES ('1', 'Venom', '1996-10-10');
+INSERT INTO `iweb`.`entrega` (`id`, `anotacion`, `fecha_entrega`) VALUES ('2', 'La venganza de Milú', '2005-08-05');
+INSERT INTO `iweb`.`entrega` (`id`, `anotacion`, `fecha_entrega`) VALUES ('3', 'Los Vengadores', '2018-11-03');
+INSERT INTO `iweb`.`entrega` (`id`, `anotacion`, `fecha_entrega`) VALUES ('4', 'Robin el torpe', '2009-07-12');
+
+INSERT INTO `iweb`.`entrega` (`id`, `anotacion`, `fecha_entrega`) VALUES ('5', 'Sketch Mortadelo ', '2018-11-23');
+INSERT INTO `iweb`.`entrega` (`id`, `anotacion`, `fecha_entrega`) VALUES ('6', 'Mortadelo Disfrazado', '2017-04-01');
+
+
+INSERT INTO `iweb`.`has_entrega` (`id`, `idSerie`, `idEntrega`) VALUES ('1', '1', '1');
+INSERT INTO `iweb`.`has_entrega` (`id`, `idSerie`, `idEntrega`) VALUES ('2', '3', '2');
+INSERT INTO `iweb`.`has_entrega` (`id`, `idSerie`, `idEntrega`) VALUES ('3', '2', '3');
+INSERT INTO `iweb`.`has_entrega` (`id`, `idSerie`, `idEntrega`) VALUES ('4', '4', '4');
+
+INSERT INTO `iweb`.`has_entrega` (`id`, `idSerie`, `idEntrega`) VALUES ('5', '7', '5');
+INSERT INTO `iweb`.`has_entrega` (`id`, `idSerie`, `idEntrega`) VALUES ('6', '7', '6');
+
 -- Dump completed on 2018-11-13 19:51:46
 
 
--- GRANTS SUPERUSER to 'iweb'
-use mysql;
-CREATE USER 'iweb'@'localhost' IDENTIFIED BY 'iweb';
-GRANT ALL ON *.* TO 'iweb'@'localhost';
-flush privileges;
